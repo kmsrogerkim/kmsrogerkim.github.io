@@ -1,7 +1,7 @@
-___
+---
 layout: post
 title: "cmpnyinfo: the planning"
-___
+---
 
 
 ## Introduction
@@ -31,8 +31,7 @@ There are already websites like investing, but I want a more _light-weight, casu
 ## General Structure (for now)
 
 Whenever I have to build something in a level any bigger than a single, file, I draw out the general structure. Like this.
-
-<img title="" src="file:///C:/Users/minse/OneDrive/문서/Blogs/1. cmpnyinfo. The planning/cmpnyinfo.drawio.png" alt="draw.io" width="770" data-align="inline">
+![draw.io](/assets/img/cmpnyinfo_general_struct.png)
 
 Sorry for the unreadable texts. I use [draw.io](https://www.drawio.com/) to draw all my diagrams, I haven't found an effective way to share diagrams in draw.io.
 
