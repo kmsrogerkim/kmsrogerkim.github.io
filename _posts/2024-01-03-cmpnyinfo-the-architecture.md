@@ -33,7 +33,8 @@ This architecture, in my opinion, suits bests to my website, for the following r
     - When you look at the _diagram below_, you can see how the API _module_ and the Web-app _modules_ has their own data to access.
     - It is not exactly seperated in terms of having a seperate database, or a seperate server, or instance for it, ***BUT*** I am planning not to write a single line of code that accesses those data of other application. This way, they are seperated.
 
-**Diagram** ![diagram](assets/img/cmpnyinfo_architecture.png)
+**Diagram** 
+![diagram](/assets/img/cmpnyinfo_architecture.png)
 
 # Contact Me:
 
