@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "HTML&CSS in django"
-categories: django, html&css
+categories: django
 ---
 
 ## Introduction
