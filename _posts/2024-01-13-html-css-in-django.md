@@ -27,11 +27,11 @@ Django also has its unique way of managing static files. In order to use static 
 2. Inside the "static" directory, create another directory with the name of the app you want to store the static files in.
     - For example, the css, js and image files for a django application called "ui", should be stored in the "projct_root/static/ui/"
 3. Go to the _settings.py_ file for your project, then 
-    -   ```
-        STATICFILES_DIRS = [
-	        os.path.join(BASE_DIR, 'static'), #remember to include the 'os' package
-        ]
-        ```
+```
+    STATICFILES_DIRS = [
+	    os.path.join(BASE_DIR, 'static'), #remember to include the 'os' package
+    ]
+```
 
 Now, when you want to refer to those css files in your html,
 ```
