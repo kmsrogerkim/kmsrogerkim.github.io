@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "HTML&CSS in django"
+title: "html in django"
 categories: django
 ---
 
