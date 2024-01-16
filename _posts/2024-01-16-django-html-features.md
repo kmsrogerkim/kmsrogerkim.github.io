@@ -34,6 +34,7 @@ Django also has its unique way of managing static files. In order to use static 
 ```
 
 Now, when you want to refer to those css files in your html,
+{% raw %}
 ```
 {%load static%} #Do this
 <!DOCTYPE html>
@@ -41,6 +42,7 @@ Now, when you want to refer to those css files in your html,
     <link rel="stylesheet" href="{%static 'ui/name.css'%} #and something like this
 ...
 ```
+{% endraw %}
 ## CSRF Token
 
 In django, whenever you want to accept an user input, or in other words, allow the user to ***post*** to your server, you have to include
