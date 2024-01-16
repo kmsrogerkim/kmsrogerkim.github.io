@@ -1,13 +1,13 @@
 ---
 layout: single
-title: "html in django"
+title: "django: html features"
 categories: django
 ---
 
 ## Introduction
 
 In this post, I am going to talk about
-- include feature in django (nabvar)
+- the "include" feature in django (nabvar)
 - static files in django
 - csrf token
 
