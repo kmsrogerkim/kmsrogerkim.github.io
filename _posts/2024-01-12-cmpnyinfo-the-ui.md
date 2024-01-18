@@ -2,6 +2,7 @@
 layout: single
 title: "cmpnyinfo: the UI"
 categories: cmpnyinfo
+tag: [html-css, front-end, ui]
 ---
 
 ## Introduction

@@ -2,6 +2,7 @@
 layout: single
 title: "django: html features"
 categories: django
+tag: [html-css, django, front-end]
 ---
 
 ## Introduction

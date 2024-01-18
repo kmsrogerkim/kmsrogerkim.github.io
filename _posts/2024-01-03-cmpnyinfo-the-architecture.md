@@ -2,6 +2,7 @@
 layout: single
 title: "cmpnyinfo: the architecture"
 categories: cmpnyinfo
+tag: software-architecture
 ---
 
 ## Introduction
