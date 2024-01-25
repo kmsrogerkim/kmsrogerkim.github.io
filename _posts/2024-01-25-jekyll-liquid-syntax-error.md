@@ -7,7 +7,7 @@ tag: [jekyll, bug-fix]
 
 ## Introduction
 
-When I was writing [this previous post](https://rogerkimjazzlover.github.io/django/django-html-features/), I faced a jekyll syntax error. I am currently writing my posts using the [Minimal Mistakes Jekyll Theme](https://github.com/mmistakes/minimal-mistakes); and I faced the _"Liquid Exception: Liquid syntax error"_.
+When I was writing [this previous post](https://rogerkimjazzlover.github.io/django/django-html-features/), I faced a jekyll syntax error. I am currently writing my posts using the [Minimal Mistakes Jekyll Theme](https://github.com/mmistakes/minimal-mistakes); and I faced the _"Liquid Exception: Liquid syntax error: Unknown tag 'some_tag' in post_file_directory"_.
 
 ## Reason
 
@@ -31,6 +31,10 @@ If you search this issue up in google, or ask Chat-GPT like I did, the solutions
 
 _{% raw %}_ and _{% endraw %}_ tags before the code. Like this:
 
+[//]: # {% endraw %}
+
+[//]: # {% raw %}
+
 ```
 {% raw %}
 {% load static %} # Do this
@@ -47,7 +51,13 @@ _{% raw %}_ and _{% endraw %}_ tags before the code. Like this:
 
 [//]: # {% raw %}
 
-```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the _{% raw %}_ and _{% endraw %}_ tags.
+```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the plain 
+
+[//]: # {% endraw %}
+
+[//]: # {% raw %}
+- _{% raw %}_ and 
+- _{% endraw %}_ tags.
 
 [//]: # {% endraw %}
 
