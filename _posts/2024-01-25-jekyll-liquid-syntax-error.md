@@ -23,27 +23,31 @@ In [this previous post](https://rogerkimjazzlover.github.io/django/django-html-f
 
 [//]: # {% endraw %}
 
-## Solution
+## Solution 1
 
 If you search this issue up in google, or ask Chat-GPT like I did, the solutions would be to add 
 
-&#123;% raw &#125; and &#123;% endraw &#125; tags before the code. Like this:
+&#123;% raw %&#125; and &#123;% endraw %&#125; tags before the code. Like this:
 
-&#123;% raw &#125;
+&#123;% raw %&#125;
 ```
 djang-stuff-code
 ```
-&#123;% endraw &#125;
+&#123;% endraw %&#125;
 
 ## Solution 2
 
 ***However,*** that didn't work for me. Instead, I had to add
 
-[//]: # {% raw %}
+_[//]: # &#123;% raw %&#125;_ and _[//]: # &#123;% endraw &#125;_ tags instead of the usual solution.
 
- tags instead of the usual solution.
+## Solution 3
 
-[//]: # {% endraw %}
+Or, you can just simply use corresponding HTML entities. 
+- ```{``` as ```&#123;```, 
+- and ```}``` as ```&#125;``` 
+
+&#123;% raw %&#125; = ```&#123;% raw %&#125;```
 
 ## Conclusion
 
