@@ -41,7 +41,7 @@ djang-stuff-code
 
 [//]: # {% raw %}
 
-```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the usual solution.
+ tags instead of the usual solution.
 
 [//]: # {% endraw %}
 
