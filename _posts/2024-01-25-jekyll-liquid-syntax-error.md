@@ -27,23 +27,19 @@ In [this previous post](https://rogerkimjazzlover.github.io/django/django-html-f
 
 If you search this issue up in google, or ask Chat-GPT like I did, the solutions would be to add 
 
-[//]: # {% raw %}
+&#123;% raw &#125; and &#123;% endraw &#125; tags before the code. Like this:
 
-{% raw %} and {% endraw %} tags before the code. Like this:
-
-[//]: # {% endraw %}
-
-[//]: # {% raw %}
-
-{% raw %}
+&#123;% raw &#125;
+```
 djang-stuff-code
-{% endraw %}
+```
+&#123;% endraw &#125;
 
-[//]: # {% endraw %}
-
-[//]: # {% raw %}
+## Solution 2
 
 ***However,*** that didn't work for me. Instead, I had to add
+
+[//]: # {% raw %}
 
 ```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the usual solution.
 
