@@ -29,35 +29,23 @@ If you search this issue up in google, or ask Chat-GPT like I did, the solutions
 
 [//]: # {% raw %}
 
-_{% raw %}_ and _{% endraw %}_ tags before the code. Like this:
+{% raw %} and {% endraw %} tags before the code. Like this:
 
 [//]: # {% endraw %}
 
 [//]: # {% raw %}
 
-```
 {% raw %}
-{% load static %} # Do this
-<!DOCTYPE html>
-...
-    <link rel="stylesheet" href="{% static 'ui/name.css' %} # and something like this
-...
+djang-stuff-code
 {% endraw %}
-```
 
 [//]: # {% endraw %}
+
+[//]: # {% raw %}
 
 ***However,*** that didn't work for me. Instead, I had to add
 
-[//]: # {% raw %}
-
-```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the plain 
-
-[//]: # {% endraw %}
-
-[//]: # {% raw %}
-- _{% raw %}_ and 
-- _{% endraw %}_ tags.
+```[//]: # {% raw %}``` and ```[//]: # {% endraw %}``` tags instead of the usual solution.
 
 [//]: # {% endraw %}
 
