@@ -39,7 +39,7 @@ djang-stuff-code
 
 ***However,*** that didn't work for me. Instead, I had to add
 
-_[//]: # &#123;% raw %&#125;_ and _[//]: # &#123;% endraw &#125;_ tags instead of the usual solution.
+_&#91;//&#93;: # &#123;% raw %&#125;_ and _&#91;//&#93;: # &#123;% endraw &#125;_ tags instead of the usual solution.
 
 ## Solution 3
 
