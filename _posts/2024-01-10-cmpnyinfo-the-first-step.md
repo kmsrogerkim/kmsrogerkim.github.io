@@ -45,7 +45,7 @@ For my website, I'm just going to stick with _requirements.txt_ file. But I am p
 
 ## Setting Up the Django Project
 
-Install django, and for my case, _djangorestframework_ as well, since one of my apps is going to be an API module, as I discussed in [cmpnyinfo: the architecture](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-architecture/).
+Install _django_, and for my case, _djangorestframework_ as well, since one of my apps is going to be an API module, as I discussed in [cmpnyinfo: the architecture](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-architecture/).
 
 I am not going through the detailed commands and modification of files such as _urls.py_ and etc. There are plenty of detailed tutorials for that in YouTube. But it is worth to mention about my choice of DB.
 
