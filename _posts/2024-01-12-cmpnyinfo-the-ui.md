@@ -38,7 +38,7 @@ Here's how my home page looks like right now.
 
 ![](/assets/img/cmpnyinfo_home_page.png)
  
-How does it look? Yeah I know. It's pretty bad. I was never good at designing anyways. 
+How does it look? Yeah I know. It's not really the best looking website out there. But it works just fine.
 
 So, while I am developing web-pages in django, I noticed some of it's unique features. Here's what I mean by ***django's unique features***
 - handling static files (img&css etc)
@@ -46,9 +46,7 @@ So, while I am developing web-pages in django, I noticed some of it's unique fea
 - passing variables to the front-end
 - csfr token
 
-If you are interested in the things above, I wrote a post about it [here](https://rogerkimjazzlover.github.io/cmpnyinfo/django-template(html)-basics/)
-
-Ok sure, ***other frameworks may also have these features***, but I never used them so I'm not sure.
+If you are interested in the things above, I wrote a post about it [here](https://rogerkimjazzlover.github.io/django/django-html-features/)
 
 ## The cmpny.html
 This page is for displaying the information of the company the user typed in the search bar.

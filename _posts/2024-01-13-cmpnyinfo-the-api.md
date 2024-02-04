@@ -59,7 +59,7 @@ This allows our API app to handle http requests sent by the UI app. Like this
 ```
 #In the views.py file in the UI app
 def view_balch(request):
-		cmpnyname = requests.get("http://localhost:8000/api/cmpnyname")
+	cmpnyname = requests.get("http://localhost:8000/api/corresponding-url-for-api")
 ```
 As you can see, the apps are communicating through http requests, and the API app is doing its job as an API service! It may not be the best way to communicate, or share data between apps in django. However, this is a special case since I specifically designed it to be this way (You can refere to [this post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-architecture/)). So that I can have these advantages:
 - Easy to seperate the API side of the website into a microservice

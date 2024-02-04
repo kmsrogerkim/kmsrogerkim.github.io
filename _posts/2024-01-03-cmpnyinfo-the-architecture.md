@@ -7,7 +7,7 @@ tag: software-architecture
 
 ## Introduction
 
-I usually like to plan things through before I do it. Especially if I am working on a project like this. And there is a literal study revolving how to make a software, called _software architecture._ I am not exactly an expert in this field. But I tried to apply some concepts from it, on the process of planning how to design my website.
+I usually like to plan things through before I do it. Especially if I am working on a project like this. And there is a literal study revolving how to make a software, called _software architecture._ I tried to apply some concepts from it, in the process of planning how to design my website.
 
 ## Software Architecture Pattern
 
@@ -15,11 +15,9 @@ There are several software architecture patterns, which I am not going to explai
 
 **What is modular monolithic architecture?**
 
-According to my friend, GPT, it is basically when you 
+It is basically when you 
 1. seperate parts of your software into differnet _modules_ that does certain things
 2. and those _modules_ are all built in one giant monolithic service, in this case, an EC2 instance.
-
-Now if you ask me what exactly this _module_ stands for, I have no idea. That's what I'm wondering as well.
 
 ## How it applies to my website
 
