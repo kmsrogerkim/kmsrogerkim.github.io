@@ -6,6 +6,7 @@ tag: [html-css, front-end, ui]
 ---
 
 ## Introduction
+
 In this post, I am going to talk about
 - creating html&css templates in django for my website
 
