@@ -24,15 +24,14 @@ REST stands for _representational state transfer_. It is an architectural style 
 For example, here's a code from my project
 ```
 def cmpny(request, cmpnyname):
-	basic_info = requests.post
-    ("http://localhost:8000/api/basicInfo", data={"cmpnyname":cmpnyname})
+	basic_info = requests.post("http://localhost:8000/api/basicInfo", data={"cmpnyname":cmpnyname})
 ```
 
-The server is sending a http POST request to the URI of "/api/basicInfo", with the name of the company, (cmpnyname) as POST data
+The server is sending a http POST request to the URI of ```/api/basicInfo```, with the name of the company, (cmpnyname) as POST data
 
 ### 2. Don't use _
 
-When you desing the uris, don't design them like _"api/basic_info"_. Instead, design them using (-), or capital letters, like _"api/basic-info"_ or _"api/basicInfo"._
+When you desing the uris, don't design them like ```api/basic_info```. Instead, design them using (-), or capital letters, like ```api/basic-info``` or ```api/basicInfo```
 
 ### 3. Use plurals
 
@@ -46,7 +45,7 @@ Here are some examples of commonly used status codes and their meaning
 
 This way, it is easier to handle exceptions and errors, since you can identify what went wrong. Here's an example code from my project.
 
-In the API side, I am going to return a 404_NOT_FOUND status code when the company is not one of the keys in the _name_code_ dictionary; meaning that our website doesn't provide any information regarding that company.
+In the API side, I am going to return a 404 NOT FOUND status code when the company is not one of the keys in the ```name_code``` dictionary; meaning that our website doesn't provide any information regarding that company.
 ```
 from rest_framework import status
 @api_view(['POST'])
@@ -58,7 +57,7 @@ def get_basic_info(request):
         status=status.HTTP_404_NOT_FOUND)
 ```
 
-Here's a documentation for all the status codes in djangorestframework. 
+Here's a documentation for all the status codes in djangorestframework. [Click Here](https://www.django-rest-framework.org/api-guide/status-codes/) or copy-paste this url
 
 https://www.django-rest-framework.org/api-guide/status-codes/
 
@@ -108,11 +107,11 @@ Of course, you have to document what your API provides and how others can use it
 
 This post contains a lot of quotes from this great post from medium, written by Dr. Milan  Milanovic.
 
-1. https://medium.com/@techworldwithmilan/rest-api-design-best-practices-2eb5e749d428
+_1. https://medium.com/@techworldwithmilan/rest-api-design-best-practices-2eb5e749d428_
 
 And a quote from this website.
 
-2. https://www.redhat.com/en/topics/api/what-is-a-rest-api
+_2. https://www.redhat.com/en/topics/api/what-is-a-rest-api_
 
 ## Contact Me:
 
