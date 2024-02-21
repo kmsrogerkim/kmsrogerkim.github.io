@@ -27,11 +27,11 @@ def cmpny(request, cmpnyname):
 	basic_info = requests.post("http://localhost:8000/api/basicInfo", data={"cmpnyname":cmpnyname})
 ```
 
-The server is sending a http POST request to the URI of ```/api/basicInfo```, with the name of the company, (cmpnyname) as POST data
+The server is sending a http POST request to the url of ```/api/basicInfo```, with the name of the company, (cmpnyname) as POST data
 
 ### 2. Don't use _
 
-When you desing the uris, don't design them like ```api/basic_info```. Instead, design them using (-), or capital letters, like ```api/basic-info``` or ```api/basicInfo```
+When you desing the urls, don't design them like ```api/basic_info```. Instead, design them using (-), or capital letters, like ```api/basic-info``` or ```api/basicInfo```
 
 ### 3. Use plurals
 
@@ -65,9 +65,9 @@ Then, in the client's side, I can handle the errors. If I don't handle the error
 
 ```
 #Calling API
-basic_info = requests.post(api uri, post data)
-finstate_sum = requests.post(api uri, post data)
-graph_data = requests.post(api uri, post data)
+basic_info = requests.post(api url, post data)
+finstate_sum = requests.post(api url, post data)
+graph_data = requests.post(api url, post data)
 
 if basic_info.status_code != 200 or finstate_sum.status_code != 200 orgraph_data.status_code != 200:
     return redirect("error_page")
