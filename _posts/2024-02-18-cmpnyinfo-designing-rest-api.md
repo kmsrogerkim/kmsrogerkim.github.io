@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Designing REST API"
+title: "cmpnyinfo: designing REST API"
 categories: cmpnyinfo
 tag: [api, rest-api, back-end]
 ---
