@@ -18,8 +18,8 @@ That is my home page. Not a lot changed from the beginning, but there were certa
 
 ### Main page
 <p float="left">
-  <img src="/assets/img/status_report_cmpny.png" width="100" />
-  <img src="/assets/img/status_report_cmpny2.png" width="100" /> 
+  <img src="/assets/img/status_report_cmpny.png" width="50%" />
+  <img src="/assets/img/status_report_cmpny2.png" width="50%" /> 
 </p>
 
 That is my main page. The top box provides some basic stock information about the company. And for the _Summary of Financial Statement,_ you can scroll through it horizontally to view more information.
