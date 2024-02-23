@@ -2,7 +2,7 @@
 layout: single
 title: "cmpnyinfo: status report"
 categories: cmpnyinfo
-tag: [api, rest-api, back-end]
+tag: [ui, back-end]
 ---
 
 ## Introduction
