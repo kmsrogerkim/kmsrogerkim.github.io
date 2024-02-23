@@ -2,7 +2,7 @@
 layout: single
 title: "Jekyll Liquid Syntax Error"
 categories: bugs
-tag: [jekyll, bug-fix]
+tag: [bug-fix]
 ---
 
 ## Introduction
