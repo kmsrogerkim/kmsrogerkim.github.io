@@ -73,7 +73,7 @@ CMD [ "python", "manage.py", "runserver","0.0.0.0:8000"]
 
 ### Some warnings
 
-This image might work just fine. But it is certainly not the best one. Especially the ```COPY . /usr/src/app/``` line. It is important to not have any sensitive files inside your image (e.x: API keys, secret keys). And it is always good to keep your image as clean and minimal as possible.
+This image might work just fine. But it is certainly not the best one. Especially the ```COPY . /usr/src/app/``` line. It is important to not have any sensitive files inside your image (e.x: API keys, secret keys). And it is always good to keep your image as minimal as possible.
 
 ## Basic docker commands
 
