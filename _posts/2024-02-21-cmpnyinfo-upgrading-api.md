@@ -2,7 +2,7 @@
 layout: single
 title: "cmpnyinfo: upgrading the API"
 categories: cmpnyinfo
-tag: [api, rest-api, back-end]
+tag: [rest-api, back-end]
 ---
 
 ## Subtitle: learning from mistake
