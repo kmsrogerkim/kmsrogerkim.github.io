@@ -17,7 +17,7 @@ Hi! I am Roger Kim, a computer science student at Hanyang University located in 
 - Designing Software (Software Architecture)
 
 ## Projects
-### Website - cmpnyinfo
+## Website - cmpnyinfo
 
 This is a simple website that analyses the financial statements of corporations registered in Korean Composite Stock Price Indexes(KOSPI). It provides ***essential analytical data*** and ***visual representation*** using variouse types of graphs.
 
@@ -28,7 +28,7 @@ This is a simple website that analyses the financial statements of corporations 
   <img src="/assets/img/cmpnyinfo_final_graph.png" width="44%" /> 
 </p>
 
-### OpenSource - NAVER Shopping Insight
+## OpenSource - NAVER Shopping Insight
 
 A opensource project. Visit it [here](https://github.com/RogerKimJazzLover/NAVER_shopping_insight). 
 
@@ -36,7 +36,7 @@ This is an API-based application that gathers information such as,
 1. the most searched keywords for shopping categories, from one of South Korea's biggest IT company, NAVER.
 2. other such as monthly searched numbers, product numbers, competition index, etc.
 
-#### ⚙️ Languages or Frameworks Used
+**⚙️ Languages or Frameworks Used**
 
 Modules required are `pandas`, `request`, `time`, and more.
 
@@ -45,11 +45,11 @@ These are listed in `requirements.txt` in the `docs` folder. Use the below comma
 ```pip install -r requirements.txt```
 
 <p float="left">
-  <img src="/assets/img/naver1.png" width="90%" />
-  <img src="/assets/img/naver2.png" width="90%" />
+  <img src="/assets/img/naver1.png" width="95%" />
+  <img src="/assets/img/naver2.png" width="95%" />
 </p>
 
-### OpenSource - Corporate Analysis
+## OpenSource - Corporate Analysis
 
 A opensource project. Visit it [here](https://github.com/RogerKimJazzLover/PYTHON-Corporate-Data-Analysis).
 
@@ -61,7 +61,7 @@ This opensource, API-based project:
     - Profit Status
 3. visualizes those datas in various types of graphs. (Box plot, scatter plot, etc)
 
-## ⚙️ Frameworks/Modules/Packages Used
+**⚙️ Frameworks/Modules/Packages Used**
 
 **Financial Data Retrieval**
 - `OpenDartReader` ***(API)***
@@ -76,10 +76,7 @@ This opensource, API-based project:
 - `tqdm`
 - `pickle`
 
-These are listed in `requirements.txt` in the `Docs` folder. Use the below command to install these dependencies.
-- ```pip install -r requirements.txt```
-
 <p float="left">
-  <img src="/assets/img/corporate_analysis1.png" width="90%" />
-  <img src="/assets/img/corporate_analysis2.png" width="90%" />
+  <img src="/assets/img/corporate_analysis1.png" width="95%" />
+  <img src="/assets/img/corporate_analysis2.png" width="95%" />
 </p>
