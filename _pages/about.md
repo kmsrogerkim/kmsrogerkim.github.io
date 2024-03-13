@@ -21,7 +21,7 @@ Hi! I am Roger Kim, a computer science student at Hanyang University located in 
 
 This is a simple website that analyses the financial statements of corporations registered in Korean Composite Stock Price Indexes(KOSPI). It provides ***essential analytical data*** and ***visual representation*** using variouse types of graphs.
 
-<p float="left" style="overflow-x: auto;">
+<p float="left">
   <img src="/assets/img/cmpnyinfo_final_home_page.png" width="44%" />
   <img src="/assets/img/cmpnyinfo_final_cmpny_page.png" width="44%" /> 
   <img src="/assets/img/cmpnyinfo_final_graph2.png" width="44%" /> 
@@ -44,7 +44,7 @@ These are listed in `requirements.txt` in the `docs` folder. Use the below comma
 
 ```pip install -r requirements.txt```
 
-<p float="left" style="overflow-x: auto;">
+<p float="left">
   <img src="/assets/img/naver1.png" width="90%" />
   <img src="/assets/img/naver2.png" width="90%" />
 </p>
@@ -79,7 +79,7 @@ This opensource, API-based project:
 These are listed in `requirements.txt` in the `Docs` folder. Use the below command to install these dependencies.
 - ```pip install -r requirements.txt```
 
-<p float="left" style="overflow-x: auto;">
+<p float="left">
   <img src="/assets/img/corporate_analysis1.png" width="90%" />
   <img src="/assets/img/corporate_analysis2.png" width="90%" />
 </p>
