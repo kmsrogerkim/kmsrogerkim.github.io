@@ -21,11 +21,15 @@ Hi! I am Roger Kim, a computer science student at Hanyang University located in 
 
 This is a simple website that analyses the financial statements of corporations registered in Korean Composite Stock Price Indexes(KOSPI). It provides ***essential analytical data*** and ***visual representation*** using variouse types of graphs.
 
-<p float="left">
+<!-- <p float="left">
   <img src="/assets/img/cmpnyinfo_final_home_page.png" width="44%" />
   <img src="/assets/img/cmpnyinfo_final_cmpny_page.png" width="44%" /> 
   <img src="/assets/img/cmpnyinfo_final_graph2.png" width="44%" /> 
   <img src="/assets/img/cmpnyinfo_final_graph.png" width="44%" /> 
+</p> -->
+<p float="left">
+  <img src="/assets/img/cmpnyinfo_portfolio_detail_eng.png" width="45%" />
+  <img src="/assets/img/cmpnyinfo_portfolio_main.png" width="44%" /> 
 </p>
 
 ## OpenSource - NAVER Shopping Insight
