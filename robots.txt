@@ -1,4 +1,4 @@
-Sitemap: https://rogerkimjazzlover.github.io/sitemap.xml
+Sitemap: https://kmsrogerkim.github.io/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

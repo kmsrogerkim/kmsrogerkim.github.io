@@ -12,7 +12,7 @@ Now it's time to start building the website. In this page, I am going to talk ab
 - A little bit about managing dependencies in python (virtualenv, pyproject.toml)
 - Setting up an environment for my django project (DBMS, future scalabilty issues.)
 
-If you want to know about the general planning stage, and the structure of the website, visit my [Previous Blogs](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-planning/)
+If you want to know about the general planning stage, and the structure of the website, visit my [Previous Blogs](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-planning/)
 
 ## Setting Up an Isolated Environment
 
@@ -45,7 +45,7 @@ For my website, I'm just going to stick with _requirements.txt_ file. But I am p
 
 ## Setting Up the Django Project
 
-Install _django_, and for my case, _djangorestframework_ as well, since one of my apps is going to be an API module, as I discussed in [cmpnyinfo: the architecture](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-architecture/).
+Install _django_, and for my case, _djangorestframework_ as well, since one of my apps is going to be an API module, as I discussed in [cmpnyinfo: the architecture](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-architecture/).
 
 I am not going through the detailed commands and modification of files such as _urls.py_ and etc. There are plenty of detailed tutorials for that in YouTube. But it is worth to mention about my choice of DB.
 
@@ -105,6 +105,6 @@ So in conclusion,
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

@@ -68,6 +68,6 @@ Since now you are going to run nginx, which will handle static files for you, yo
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

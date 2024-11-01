@@ -11,7 +11,7 @@ In this post, I am going to talk about
 - Setting up the "API" app with djangorestframework
 - Communicating between the "UI" app and the "API" app
 
-In the [previous post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-ui/), I talked about setting up the UI app for my project. In this post, I will be talking about setting up the "API" application inside django, which will serve as an REST API. Additionally, I am going to write down some commands and codes that is required for building a REST app in django.
+In the [previous post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-ui/), I talked about setting up the UI app for my project. In this post, I will be talking about setting up the "API" application inside django, which will serve as an REST API. Additionally, I am going to write down some commands and codes that is required for building a REST app in django.
 
 ## Setting up the "API" app
 
@@ -61,7 +61,7 @@ This allows our API app to handle http requests sent by the UI app. Like this
 def view_balch(request):
 	cmpnyname = requests.get("http://localhost:8000/api/corresponding-url-for-api")
 ```
-As you can see, the apps are communicating through http requests, and the API app is doing its job as an API service! It may not be the best way to communicate, or share data between apps in django. However, this is a special case since I specifically designed it to be this way (You can refere to [this post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-architecture/)). So that I can have these advantages:
+As you can see, the apps are communicating through http requests, and the API app is doing its job as an API service! It may not be the best way to communicate, or share data between apps in django. However, this is a special case since I specifically designed it to be this way (You can refere to [this post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-architecture/)). So that I can have these advantages:
 - Easy to seperate the API side of the website into a microservice
     - which makes the API ***reusable*** in the future
 - Easily scale the API side of the web in the future
@@ -79,6 +79,6 @@ In conclusion, I
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

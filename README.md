@@ -7,7 +7,7 @@ I talk about
 - Developing with **Python**
 - Managing **Dependencies**
 - And more...
-- visit it [here](https://rogerkimjazzlover.github.io/): https://rogerkimjazzlover.github.io/
+- visit it [here](https://kmsrogerkim.github.io/): https://kmsrogerkim.github.io/
 
 This blog was made possible thanks to the repo below.
 - [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)

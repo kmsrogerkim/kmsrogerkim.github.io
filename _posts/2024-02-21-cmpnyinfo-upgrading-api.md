@@ -9,7 +9,7 @@ tag: [rest-api, back-end]
 
 ## Introduction
 
-While writing [this post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-designing-rest-api/), I realized that my REST APIs were unnecessarily accepting POST requests. Since my API requests focuses on retrieving/reading data about the given company, I really think that it should only recieve GET requests.
+While writing [this post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-designing-rest-api/), I realized that my REST APIs were unnecessarily accepting POST requests. Since my API requests focuses on retrieving/reading data about the given company, I really think that it should only recieve GET requests.
 
 I believe this is one of the reasons why one should journal while working on a project; to reflect on oneself and spot mistakes. While writing these posts, I was able to fully organize my mind, and really just view this entire project/code/infrastructure/design/architecture from a third person's view. So I recommend you to do it as well!
 
@@ -76,6 +76,6 @@ As a result, I achieved a
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

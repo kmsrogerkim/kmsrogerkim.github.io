@@ -7,7 +7,7 @@ tag: [ui, back-end]
 
 ## Introduction
 
-On January 2nd, 2024, I uploaded my first post titled [cmpnyinfo: the planning](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-planning/). Since then, I have been working on this project and I would like to talk about the progress, and the current status of the project!
+On January 2nd, 2024, I uploaded my first post titled [cmpnyinfo: the planning](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-planning/). Since then, I have been working on this project and I would like to talk about the progress, and the current status of the project!
 
 ## UIs
 
@@ -46,7 +46,7 @@ That is my about page. The first box provides some basic info about me. Then the
 
 Here is the general workflow for my website in a scenario where the user types the url _"/cmpnyinfo/005930"_ in the browser. _005930_ will be passed to the views as a string argument. Then the views return an html page accordingly.
 
-I explained the backend part of my website in greater detail in these two posts. [_"cmpnyinfo: upgrading the API"_](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-upgrading-api/) & [_"cmpnyinfo: the API"_](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-api/).
+I explained the backend part of my website in greater detail in these two posts. [_"cmpnyinfo: upgrading the API"_](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-upgrading-api/) & [_"cmpnyinfo: the API"_](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-api/).
 
 This design has its disadvantages in terms of performance, since it is making an http request to the API everytime a user accesses an url. I am planning to solve this performance issue through ***caching***.
 
@@ -69,6 +69,6 @@ To sum up, I am done with the backbones of the website. The basic features are a
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

@@ -47,7 +47,7 @@ So, while I am developing web-pages in django, I noticed some of it's unique fea
 - passing variables to the front-end
 - csfr token
 
-If you are interested in the things above, I wrote a post about it [here](https://rogerkimjazzlover.github.io/django/django-html-features/)
+If you are interested in the things above, I wrote a post about it [here](https://kmsrogerkim.github.io/django/django-html-features/)
 
 ## The cmpny.html
 This page is for displaying the information of the company the user typed in the search bar.
@@ -75,6 +75,6 @@ I will have to look for ways to solve that issue, as well.
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

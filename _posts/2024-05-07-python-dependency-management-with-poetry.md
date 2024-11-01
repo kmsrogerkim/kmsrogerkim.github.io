@@ -16,7 +16,7 @@ Basically it does the work of pip (python package manager) and virtualenv(depend
 
 ## Why shift from virtualenv to Poetry?
 
-In a [previous post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-first-step/), I briefly talked about version control and dependency management in python using `virtualenv`. However, I got to work on a new project as a backend developer, project ['TOYKI'](https://toyki-homepage.vercel.app/), with my college colleague. ['TOYKI'](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. Learn more in our [website](https://toyki-homepage.vercel.app/).
+In a [previous post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-first-step/), I briefly talked about version control and dependency management in python using `virtualenv`. However, I got to work on a new project as a backend developer, project ['TOYKI'](https://toyki-homepage.vercel.app/), with my college colleague. ['TOYKI'](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. Learn more in our [website](https://toyki-homepage.vercel.app/).
 
 TOYKI project is larger in scale compared to my previous projects, and more people will be working on it. So we seeked for a more professional and handy tool, and found Poetry. The handy features of Poetry, such as
 1. automatically updating `pyproject.toml` file
@@ -93,6 +93,6 @@ If you want to add/remove a dependency or python package,
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

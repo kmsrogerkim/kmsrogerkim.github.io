@@ -108,7 +108,7 @@ You just have to create a virtualenv within the terminal's python environment us
 ```
 pip install name_of_package/framework/whatever
 ```
-Now if you're wondering what and why create virtualenv, take a look at [this post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-first-step/)
+Now if you're wondering what and why create virtualenv, take a look at [this post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-first-step/)
 
 So for example, if I want to make an website with python, so I decided to use a web framework called _django,_ all I have to do (primarily of course), is 
 ```
@@ -136,6 +136,6 @@ Most other things, web development, web sraping, tkinter(GUI), are done in text-
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

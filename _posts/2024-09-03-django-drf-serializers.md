@@ -172,6 +172,6 @@ if serializer.is_valid():
 ## Contact Me:
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

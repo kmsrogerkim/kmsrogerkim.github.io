@@ -39,6 +39,6 @@ This architecture, in my opinion, suits bests to my website, for the following r
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

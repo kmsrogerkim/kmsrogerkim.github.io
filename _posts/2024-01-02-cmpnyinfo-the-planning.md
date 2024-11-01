@@ -67,6 +67,6 @@ Sorry for the unreadable texts. Here's the url to the [diagram](https://viewer.d
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

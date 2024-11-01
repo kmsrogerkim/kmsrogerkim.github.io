@@ -18,7 +18,7 @@ In this particular post, I am going to explain the process of
 
 ## General Structure
 ![](/assets/img/containers-general-struct.png)
-Here's a picture of the general structure of the two containers we are going to deploy. If you don't know what ***nginx*** and ***gunicorn*** are, I highly recommend you to read [this post](https://rogerkimjazzlover.github.io/django/what-and-why-nginx-gunicorn/) fist.
+Here's a picture of the general structure of the two containers we are going to deploy. If you don't know what ***nginx*** and ***gunicorn*** are, I highly recommend you to read [this post](https://kmsrogerkim.github.io/django/what-and-why-nginx-gunicorn/) fist.
 
 When the user makes an http request to our domain, it is going to be directed to port 80 by default. So the request is going to go through the nginx container fist, which is listening on port 80.
 
@@ -96,7 +96,7 @@ EXPOSE 8000
 
 CMD ["gunicorn", "-k", "gevent", "cmpnyinfo.wsgi:application", "--bind", "0.0.0.0:8000"]
 ```
-I explained about Dockerfile in a great detail in [this post](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-containerizing/). So check it out.
+I explained about Dockerfile in a great detail in [this post](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-containerizing/). So check it out.
 
 The only thing worth mentioning is the CMD entrypoint. Since now we are no longer running our django application with gunicorn, the command is 
 
@@ -146,6 +146,6 @@ In the next post of the series, I am going to cover
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

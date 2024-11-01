@@ -51,7 +51,7 @@ This is a simple website that analyses the financial statements of corporations 
   <img src="/assets/img/naver1.png" width="95%" />
   <img src="/assets/img/naver2.png" width="95%" />
 </p>
-A opensource project. Visit it [here](https://github.com/RogerKimJazzLover/NAVER_shopping_insight). 
+A opensource project. Visit it [here](https://github.com/kmsrogerkim/NAVER_shopping_insight). 
 This is an API-based application that gathers information such as, 
 1. the most searched keywords for shopping categories, from one of South Korea's biggest IT company, NAVER.
 2. other such as monthly searched numbers, product numbers, competition index, etc.
@@ -65,7 +65,7 @@ This is an API-based application that gathers information such as,
   <img src="/assets/img/corporate_analysis1.png" width="95%" />
   <img src="/assets/img/corporate_analysis2.png" width="95%" />
 </p>
-A opensource project. Visit it [here](https://github.com/RogerKimJazzLover/PYTHON-Corporate-Data-Analysis).
+A opensource project. Visit it [here](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis).
 
 This opensource, API-based project:
 1. gathers & organizes the financial statements of companies listed in KOSPI(Korean Composite Stock Price Index); over the period of past six years.

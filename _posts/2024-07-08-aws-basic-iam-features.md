@@ -54,7 +54,7 @@ Then, you can register, or create users in that user group that you want.
 ## Role
 You would also come across the concept of ***roles*** and wonder what it is and how it's different from ***users***. The key difference is that you would assign roles for a non-human object, like a task or a service. Let me explain.
 
-I have explained about ECS [here](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-deploying-through-aws-ii/). For those who don't know, ECS is an AWS container management service. To build containers, ECS would need to retrieve images from ECR, assuming that is where you keep your images. 
+I have explained about ECS [here](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-deploying-through-aws-ii/). For those who don't know, ECS is an AWS container management service. To build containers, ECS would need to retrieve images from ECR, assuming that is where you keep your images. 
 
 Now, to perform that ***action*** of retrieving image from ECR, you would need to attach some policies to ECS via IAM ***roles***. If you have ever created a ECS task definition, you would have the _ecsTaskExecutionRole_ role, where the _AmazonECSTaskExecutionRolePolicy_ where you can find actions such as _BatchGetImage_. 
 ```
@@ -83,6 +83,6 @@ Just like that, you would create and assign ***roles*** to tasks and services, n
 ## Contact Me:
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

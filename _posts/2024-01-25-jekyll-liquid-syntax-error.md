@@ -7,11 +7,11 @@ tag: [bug-fix]
 
 ## Introduction
 
-When I was writing [this previous post](https://rogerkimjazzlover.github.io/django/django-html-features/), I faced a jekyll syntax error. I am currently writing my posts using the [Minimal Mistakes Jekyll Theme](https://github.com/mmistakes/minimal-mistakes); and I faced the _"Liquid Exception: Liquid syntax error: Unknown tag 'some_tag' in post_file_directory"_.
+When I was writing [this previous post](https://kmsrogerkim.github.io/django/django-html-features/), I faced a jekyll syntax error. I am currently writing my posts using the [Minimal Mistakes Jekyll Theme](https://github.com/mmistakes/minimal-mistakes); and I faced the _"Liquid Exception: Liquid syntax error: Unknown tag 'some_tag' in post_file_directory"_.
 
 ## Reason
 
-In [this previous post](https://rogerkimjazzlover.github.io/django/django-html-features/), I talked about html features provided by django. Like this:
+In [this previous post](https://kmsrogerkim.github.io/django/django-html-features/), I talked about html features provided by django. Like this:
 
 [//]: # {% raw %}
 ```
@@ -63,6 +63,6 @@ The original solution might work just fine for you, but if it doesn't, it's cert
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

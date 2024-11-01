@@ -73,6 +73,6 @@ That _"csrf token"_ is a token that django uses to prevent CSRF (Cross Site Requ
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

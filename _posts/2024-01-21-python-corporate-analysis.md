@@ -8,9 +8,9 @@ tag: [python, pandas, data-analysis, data-manipulation]
 
 ## Introduction
 
-In this post, I am going to talk about the core feature of my website _"cmpnyinfo"_(visite [here](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-planning/) to checkout what my website's about).
+In this post, I am going to talk about the core feature of my website _"cmpnyinfo"_(visite [here](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-planning/) to checkout what my website's about).
 
-The core feature of the website is basically in [this public Github repo](https://github.com/RogerKimJazzLover/PYTHON-Corporate-Data-Analysis). Here's what it does:
+The core feature of the website is basically in [this public Github repo](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis). Here's what it does:
 - Gather & organize the financial statements of 100 companies listed in KOSPI(Korean Composite Stock Price Index); over the period of ***past six years.***
 - Calculate essential & meaningful ***analytical data*** for each company. Some examples of _essential analytical data_:
     - ROA, ROE, PER, 
@@ -54,7 +54,7 @@ Here's a brief workflow of the code. There are three main python files that each
     - Current Stock & Future Stock
 
 
-**If you want to see this data by yourself,** visit the _Data_ directory in [the Github repo](https://github.com/RogerKimJazzLover/PYTHON-Corporate-Data-Analysis/tree/master)
+**If you want to see this data by yourself,** visit the _Data_ directory in [the Github repo](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis/tree/master)
 
 ## Frameworks/Modules/Packages Used
 
@@ -77,6 +77,6 @@ Here's a brief workflow of the code. There are three main python files that each
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

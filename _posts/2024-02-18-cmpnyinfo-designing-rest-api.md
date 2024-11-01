@@ -11,7 +11,7 @@ _“Application Programming Interface,” or API, refers to a communication chan
 
 In this post, I am going to talk about 
 1. _How to design REST API_
-2. _Some examples from my project, [cmpnyinfo](https://rogerkimjazzlover.github.io/cmpnyinfo/cmpnyinfo-the-api/)_.
+2. _Some examples from my project, [cmpnyinfo](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-api/)_.
 
 ## What is REST?
 
@@ -117,6 +117,6 @@ _2. https://www.redhat.com/en/topics/api/what-is-a-rest-api_
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

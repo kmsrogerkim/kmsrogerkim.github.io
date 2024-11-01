@@ -158,6 +158,6 @@ Now that's basically it! Now click _"create"_ and pray that your service deploys
 
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 

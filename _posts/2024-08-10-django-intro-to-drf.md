@@ -11,7 +11,7 @@ In this post, I am going to talk about
 - class-based views
 
 ## Setting up DRF
-**Frist,** let's install the necessary dependencies. There are two options, one with `pip`, and other with `poetry` which I introduced in [this post](https://rogerkimjazzlover.github.io/python/python-dependency-management-with-poetry/)
+**Frist,** let's install the necessary dependencies. There are two options, one with `pip`, and other with `poetry` which I introduced in [this post](https://kmsrogerkim.github.io/python/python-dependency-management-with-poetry/)
 
 - `pip install djangorestframework` or `poetry add djangorestframework`
 
@@ -162,6 +162,6 @@ urlpatterns = [
 ## Contact Me:
 Roger Kim
 
-[Github](https://github.com/RogerKimJazzLover)
+[Github](https://github.com/kmsrogerkim)
 
 e-mail: <minseungkim1017@gmail.com> 
