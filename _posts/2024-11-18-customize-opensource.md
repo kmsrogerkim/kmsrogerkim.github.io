@@ -5,13 +5,13 @@ categories: python
 tag: [python, drf, opensource] 
 ---
 ## Introduction 
-In this post, I am going to talk about how I customized the code from the [drf-simplejwt repository](https://github.com/jazzband/djangorestframework-simplejwt) to build a custom authentification flow for my [toyki project](https://toyki-homepage.vercel.app/). It is a **very simple** customization, and some may consider it uneccessary. However, there was a specific need for a custom workflow with jwt tokens from the front-end developer, which I will talk about in detail in the Background section. Also, I believer it was a good chance to dip my toe into the pool of opensource code and playing with them.
+In this post, I am going to talk about how I customized a part of the [drf-simplejwt repository](https://github.com/jazzband/djangorestframework-simplejwt) to build a custom authentification flow for my [toyki project](https://toyki-homepage.vercel.app/). It is a **very simple** customization. There was a specific need for a custom workflow with jwt tokens from front-end, which I will talk about in detail later.
 
 ## Background
-The project required a custom workflow to determine whether the refresh token and the authentification token were valid or not. The front would pass the access token and the refresh token all together to the `api/token/valid` endpoint. Then I would have to determince if the access token and the refresh token are valid or not. The problem was that, when the access token was passed through the header directly without the bearer prefix, a CORS error would occur. However, when the access token is passed through the header with the bearer header, the default JWTAuthentication workflow from the simplejwt would immediately return 401, regardless of the validity of the refresh token. So I decided to set up a simple authentication class based on the JWTAuthentication class in the simplejwt, that checks for both the access and refresh tokens' validity.
+The project required a custom workflow to determine whether a pair of refresh and access token were valid or not. Client would pass the tokens all together to the `api/token/valid` endpoint. Then the server would have to determince if the access and the refresh token are valid or not. The problem was that when the access token was passed through the header directly, without the bearer prefix, CORS error would occur. However, when the access token is passed through the header ***with*** the bearer header, the default JWTAuthentication method provided by the simplejwt would immediately return 401 when the access token is invalid, regardless of the validity of the refresh token, and the permission class of the view. So I decided to set up a simple custom authentication class based on the JWTAuthentication class in the simplejwt, that checks for both the access and refresh tokens' validity.
 
 ## Original Code
-First of all, I would want to find out which code from the simplejwt takes care of the authentication process. This can be done my reading the documentation, or in my case, checking for the DEFAULT_AUTHENTICATION_CLASSES tuple in the settings.py. You can see from the code below, it is set to the JWTAuthentication class from the authentication file in the rest_framework_simplejwt package.
+First of all, I searched for the code for JWTAuthentication from the simplejwt repo. If you check the DEFAULT_AUTHENTICATION_CLASSES tuple in `settings.py` it is probably set to the JWTAuthentication class, which, if you recall, was configured by you when you added the simplejwt to your service.
 ```python
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -19,7 +19,7 @@ REST_FRAMEWORK = {
     )
 }
 ```
-Now let's go to github and checkout how that JWTAuthentication class looks like. You can checkout the full code in [jazzband's repo](https://github.com/jazzband/djangorestframework-simplejwt/blob/master/rest_framework_simplejwt/authentication.py), the key codes are below
+Now let's go to github and checkout the code. You can checkout the full code in [jazzband's repo](https://github.com/jazzband/djangorestframework-simplejwt/blob/master/rest_framework_simplejwt/authentication.py). The key codes are below.
 ```python
 class JWTAuthentication(authentication.BaseAuthentication):
     """
@@ -67,7 +67,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
 ```
 
 ## Customizing
-So I created some custom exceptions first. When you look at the original code, you can see there is the `InvalidToken` exception which is in the [exceptions.py file](https://github.com/jazzband/djangorestframework-simplejwt/blob/master/rest_framework_simplejwt/exceptions.py). I created a `custom_exceptions` file which looks like this.
+So I created some custom exceptions first. When you look at the original code, you can see the `InvalidToken` exception which is in the [exceptions.py file](https://github.com/jazzband/djangorestframework-simplejwt/blob/master/rest_framework_simplejwt/exceptions.py). I created a `custom_exceptions` file which looks like this.
 ```python
 from rest_framework_simplejwt.exceptions import AuthenticationFailed
 from django.utils.translation import gettext_lazy as _
@@ -82,7 +82,7 @@ class InvalidRefreshToken(AuthenticationFailed):
     default_detail = _("Refresh token is invalid or expired")
     default_code = "Invalid refresh token"
 ```
-This codes looks simple, and is simple. It just inherits the `AuthenticationsFailed` class from the simplejwt, and create two new exceptions, one that say invalid `access` token, meaning olny the access token is invalid, and invalid `refresh` token, which means the refresh token is invalid. Before, the simplejwt would just return InvalidToken error, but now, it is a little more detailed.
+This codes looks simple, and is simple. It just inherits the `AuthenticationsFailed` class from the simplejwt, and creates two new exceptions, Invalid `access` token, invalid `refresh` token, Before, the simplejwt would just return InvalidToken error, but now, we can specify which token is invalid.
 
 Then, I created a new custom authentication file that looks something like this.
 ```python
@@ -92,8 +92,7 @@ from api.custom_rfs_exceptions import InvalidAccessToken, InvalidTokens, Invalid
 User = get_user_model()
 
 class CustomJWTAuthentication(JWTAuthentication):
-    def authenticate(self, request):
-        # same from the original code
+    # function to be overrided
     def get_validated_token(self, raw_token: bytes, **refresh_token):
         """
         Validates an encoded JSON web token and returns a validated token
@@ -161,9 +160,7 @@ REST_FRAMEWORK = {
 ```
 
 ## Conclusion
-The customization is fairly simple. But it was really a great entrance to customizing, reading and playing with opensource code for me. I finally got to realize what `opensource` really is, and how it works, and how to customize them. I also realized that it is very fatal to read the documents, and I spent quite a time to read the opensource code just to understand how it works.
-
-I am looking forward to customize more opensource codes in the future, and one day, maybe even contribute to one.
+The customization is fairly simple. But it was really a great to customize, read and play with opensource code. I finally got to realize what `opensource` really meant, how it works, and how to customize them. I also realized that it is very fatal to read the documents, and I spent quite a time reading the opensource code just to understand how it works. I am looking forward to customize more opensource codes in the future, and one day, maybe even contribute to one.
 
 ## Contact Me:
 Roger Kim
