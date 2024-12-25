@@ -47,9 +47,7 @@ jobs:
       postgres:
         image: postgres:14-alpine
         env:
-          POSTGRES_DB: toyki
-          POSTGRES_USER: your_usr_name_here 
-          POSTGRES_PASSWORD: your_pass_here
+        # necessary env variables to set up your postgreSQL db
         ports:
           - 5432:5432
       memcached:
@@ -79,14 +77,13 @@ jobs:
       - name: Generate Environment Variables File
         run: |
           echo "DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY" >> .env.dev
-          echo "API_KEY=$API_KEY" >> .env.dev
         # other sensitive env variables that are stored in Github secrets
 
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
           API_KEY: ${{ secrets.API_KEY }}
-          # also declare your env variables here
-          # so that the python's .load_env() would get them
+          # declare your env variables here
+          # so that the system can reach them on the command above with the $ sign
 
       - name: Run Tests
         run: |
@@ -95,17 +92,91 @@ jobs:
 
         env:
           ENVIRONMENT: 'development'
-          ALLOWED_HOST: '*'
-          DEBUG: 'True'
           # other env variables that are not sensitive and
           # can directly be stored as text in .yml file
 ```
+
+- `services`
+  - These services can be used for the steps that follow; in this case unit testing.
+- `strategy`
+  - `max-parallel`: this configures how many runs can run simultaneously (parallel)
+  - `matrix`: sets up some variables that can be used through out the run
+- `steps`
+  - This sections basically states what the github actions will do. It is very similar to how Dockerfile works if you think about it. You just tell the container to run certain commads. 
+  - The only thing that you might not be familiar with would be the `uses` command used along with `actions/checkout$v4` and `actions/setup-python@v3`
+- `secrets`
+  - The secret env variables can be set in `github.com/your_id/your_repo/settings/secrets/actions`path.
+  - And they can be reacehd by doing `${{ secrets.sth }}` as can see from above.
+- `uses`
+    - This keyword specifies an action to be executed as part of the workflow. Actions, just like the one we are creating right now, are pre-built, reusable units of code that perform specific tasks.
+    - `actions/checkout@v4`: an actions maintained by GitHub that checks out the code from the repository to whatever the envrionment the actions will be ran (upload it to VM).
+    - `actions/setup-python@v3`: It sets up a Python environment in the runner. It ensures that the specified version of Python is installed and available in the `PATH`, which, if you have ever tried setting up Python on different machines, can sometimes be a huge pain in the ass. 
+
+## Automate Image Pushing to AWS ECR
+If you click on the `New Workflow` button in the actions tab, you can see `Deploy to Amazon ECS`. This action already includes image creation and pushing to ECR. So I just used that. Here's how it looks like.
+
+```yml
+name: Push Image to ECR
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  AWS_REGION: your_region_here
+  ECR_REPOSITORY: your_ecr_name_here
+  # e.x: toyki
+
+permissions:
+  contents: read
+
+jobs:
+  push_image:
+    name: push-image
+    runs-on: ubuntu-latest
+    environment: production
+    # set the env variable of `envronment` to production
+    # since some of my codes runs differently depending on this
+    # env variable
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      run: |
+        DJANGO_IMAGE_TAG=$(cat django_image_tag.txt)
+      # I specify the image tag for my production images in a text file
+      # in the repository. It is updated everytime a PR is merged to main
+
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$DJANGO_IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$DJANGO_IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$DJANGO_IMAGE_TAG" >> $GITHUB_OUTPUT
+```
+There is nothing special here. There are a lot of pre-built actions from aws themselves that you can use in your GitHub actions. For example, the `aws-actions/configure-aws-credentials` and `aws-actions/amazon-ecr-login@v1` actions are used in this action.
+
 ## Conclusion
+While doing this, I felt like everything is just a bash script at its core. GitHub sets up an isolated environment for you either using VM (default) or containers. Then you tell the machine to run some commands. Just like Dockerfile, and just like a bash script. 
+
+In fact, I am currently doing another project with the HYU's Vibro Acoustics lab, where I have to manually set up Docker and everything in an EC2 instance. In the process, I made up a bash scrip of my own that automates a lot of the set up process. I also created a bash script that pulls image from ECR and set up some variables and run the image as container. While I was doing that, I thought to myself that maybe this is just what is happening behind the scene for AWS's ECS service at its core.
+
+Anyways, I hope my post helped make your developing life better.
 
 ## Contact Me:
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[Github](https://github.com/kmsrogerkim)]
 
 e-mail: <minseungkim1017@gmail.com> 
-
