@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "python: dependency management with poetry"
+title: "Dependency Management with Poetry"
 categories: python
 tag: [python, dependency-management, virtualenv]
 ---

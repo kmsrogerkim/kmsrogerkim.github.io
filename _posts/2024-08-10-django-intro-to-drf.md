@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "django: intro to DRF"
+title: "Introduction to Django Rest Framework"
 categories: django
 tag: [django, back-end, python, rest-api, drf]
 ---
