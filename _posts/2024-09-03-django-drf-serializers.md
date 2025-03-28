@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "django: DRF's serializer"
+title: "Understanding DRF's Serializer"
 categories: django
 tag: [django, back-end, python, rest-api, drf]
 ---
