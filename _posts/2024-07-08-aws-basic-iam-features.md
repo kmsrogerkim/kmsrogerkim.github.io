@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "aws: basic IAM features"
+title: "Basic IAM features"
 categories: aws
 tag: [aws, back-end]
 ---

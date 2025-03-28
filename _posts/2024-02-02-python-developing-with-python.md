@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "python: developing with python"
+title: "Developing with Python"
 categories: python
 tag: python
 ---

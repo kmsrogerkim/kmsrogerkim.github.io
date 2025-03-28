@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "django: html features"
+title: "Django's HTML Features"
 categories: django
 tag: [html-css, django, front-end]
 ---
