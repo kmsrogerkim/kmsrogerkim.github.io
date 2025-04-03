@@ -7,13 +7,17 @@ sidebar_main: true
 ---
 # Roger Kim
 
-Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs **Django REST Framework (DRF)**; and is also participating as a student researcher at Dr. Jin Yong Jeon's Vibro-Acoustics Medical Lab at HYU, developing Digital Signal Processing algorithm & Deep Learning model for automatic cough counting. Additionally, I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions and so on. Finally, I am experienced in team working and team working tools such as Slack, Notion, backlogs, retrospect and so on. 
+Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs using **Django REST Framework (DRF)**. 
+
+I am currently participating as a student researcher at Dr. Jin Yong Jeon's Vibro-Acoustics Medical Lab at HYU, developing Digital Signal Processing algorithm & Deep Learning model for automatic cough counting. 
+
+Additionally, I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions and so on. Finally, I am experienced in team working and is experienced with agile culture such as backlogs.
 
 ## My key skills
 - Backend development with ***Django*** and ***DRF(Django Rest Framework)***
+- Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
 - Containerization with ***Docker***
 - Data Manipulation with ***Python***
-- Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
 
 ## Projects
 ## Web-application(Backend) - TOYKI (Developing)
