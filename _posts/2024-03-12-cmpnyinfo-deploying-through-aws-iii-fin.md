@@ -156,7 +156,5 @@ Now that's basically it! Now click _"create"_ and pray that your service deploys
 
 ## Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

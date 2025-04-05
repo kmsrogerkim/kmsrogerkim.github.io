@@ -75,7 +75,5 @@ Here's a brief workflow of the code. There are three main python files that each
 
 ## Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

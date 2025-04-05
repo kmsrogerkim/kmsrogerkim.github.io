@@ -74,7 +74,5 @@ As a result, I achieved a
 
 ## Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

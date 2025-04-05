@@ -160,8 +160,6 @@ urlpatterns = [
 - **I will talk about serializers in a seperate post.**
 
 ## Contact Me:
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
 

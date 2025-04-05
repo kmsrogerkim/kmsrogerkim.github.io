@@ -66,7 +66,5 @@ Since now you are going to run nginx, which will handle static files for you, yo
 
 ## Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

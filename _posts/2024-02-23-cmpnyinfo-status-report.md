@@ -67,8 +67,6 @@ To sum up, I am done with the backbones of the website. The basic features are a
 
 ## Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
 

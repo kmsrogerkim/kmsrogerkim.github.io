@@ -65,8 +65,6 @@ Sorry for the unreadable texts. Here's the url to the [diagram](https://viewer.d
 
 # Contact Me:
 
-Roger Kim
-
-[Github](https://github.com/kmsrogerkim)
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
 
