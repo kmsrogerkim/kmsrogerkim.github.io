@@ -75,7 +75,7 @@ In conclusion, I
 - modified settings and url paths
 - managed communication between the UI app and the API app
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

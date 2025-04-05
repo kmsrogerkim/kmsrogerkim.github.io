@@ -159,7 +159,7 @@ urlpatterns = [
 - Other codes are basically querying from the queryset using django's **ORM** and **serializer**
 - **I will talk about serializers in a seperate post.**
 
-## Contact Me:
+## Written by
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
 

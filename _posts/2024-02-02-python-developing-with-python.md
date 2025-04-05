@@ -132,7 +132,7 @@ Most other things, web development, web sraping, tkinter(GUI), are done in text-
 - Web dev, Data Science, Machine Learning, GUI, Website testing (selenuim), etc
 5. Use Jupyter Notebook if you want to view your data as you write your code.
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

@@ -176,6 +176,6 @@ In fact, I am currently doing another project with the HYU's Vibro Acoustics lab
 
 Anyways, I hope my post helped make your developing life better.
 
-## Contact Me:
+## Written by
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

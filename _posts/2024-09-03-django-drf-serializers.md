@@ -169,7 +169,7 @@ if serializer.is_valid():
     serializer.update(instance=profile, validated_data=request.data)
 ```
 
-## Contact Me:
+## Written by
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
 

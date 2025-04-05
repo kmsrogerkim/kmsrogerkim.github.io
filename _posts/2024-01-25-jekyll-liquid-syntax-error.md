@@ -59,7 +59,7 @@ Or, you can just simply use corresponding HTML entities.
 
 The original solution might work just fine for you, but if it doesn't, it's certainly worth to try out my solution.
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

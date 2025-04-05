@@ -89,7 +89,7 @@ If you want to add/remove a dependency or python package,
 **Other Basics**
 - ```python poetry show``` -> show all the packages
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

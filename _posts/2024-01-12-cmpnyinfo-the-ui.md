@@ -71,7 +71,7 @@ Here's a veyr plossible scenario. The user enters _"samsung"_ in the search bar,
 
 I will have to look for ways to solve that issue, as well.
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

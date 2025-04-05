@@ -101,7 +101,7 @@ So in conclusion,
 - I generated the django project and apps inside the project, and modified it's configurations accordingly.
 - I am going to use sqlite3 and local DBs initially, but might migrate to other services, and deploy server for the DB.
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

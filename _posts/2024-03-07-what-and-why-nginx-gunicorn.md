@@ -64,7 +64,7 @@ Since now you are going to run nginx, which will handle static files for you, yo
 1. Nginx is an extremely efficient and fast web server, reverse proxy server, load balancer, and many more. It provides a lot of features, like load balancing, request filtering, static file handling and many more. It is essential in order to improve the performance of your web-app.
 2. Gunicron is a WSGI(Web Server Gateway Interface), that acts as an interface between the web server, and the web application.
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 

@@ -72,7 +72,7 @@ As a result, I achieved a
 2. Straight forward API design; making it intuitive and easy to use
 3. Better security; since it doesn't recieve POST requests
 
-## Contact Me:
+## Written by
 
 Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
