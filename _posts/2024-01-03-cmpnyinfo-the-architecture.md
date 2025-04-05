@@ -37,8 +37,5 @@ This architecture, in my opinion, suits bests to my website, for the following r
 
 # Contact Me:
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
-
-e-mail: <minseungkim1017@gmail.com> 

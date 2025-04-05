@@ -69,10 +69,8 @@ That _"csrf token"_ is a token that django uses to prevent CSRF (Cross Site Requ
 3. It is also set in the csrftoken cookie that's sent to the user's browser
 4. Now, whenever you make a POST request, django checks on the token to see if the request is valid(not including any un-wanted changes that you didn't put in the form).
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
 
-e-mail: <minseungkim1017@gmail.com> 

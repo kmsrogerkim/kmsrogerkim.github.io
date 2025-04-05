@@ -51,10 +51,7 @@ ECS is rather a simple alternative to more sophisticated and complex container o
 3. The ECS deploys the task to the underlying infrastructures in the cluster
     - Tasks will form according to the task definition you wrote
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
-
-e-mail: <minseungkim1017@gmail.com> 

@@ -65,10 +65,8 @@ To sum up, I am done with the backbones of the website. The basic features are a
 3. Track & Improve performance
 4. Improve UI&UX
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
 
-e-mail: <minseungkim1017@gmail.com> 

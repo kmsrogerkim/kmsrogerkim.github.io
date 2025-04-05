@@ -114,10 +114,8 @@ So in this post, I explained
 1. How I wrote dockerfile for my django application
 1. How I uploaded docker image to the Dockerhub
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
 
-e-mail: <minseungkim1017@gmail.com> 

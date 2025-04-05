@@ -113,10 +113,7 @@ And a quote from this website.
 
 _2. https://www.redhat.com/en/topics/api/what-is-a-rest-api_
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
-
-e-mail: <minseungkim1017@gmail.com> 

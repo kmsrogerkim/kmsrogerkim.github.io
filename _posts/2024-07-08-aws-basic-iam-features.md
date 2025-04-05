@@ -80,9 +80,7 @@ _AmazonECSTaskExecutionRolePolicy, JSON_
 
 Just like that, you would create and assign ***roles*** to tasks and services, not humans.
 
-## Contact Me:
-Roger Kim
+## Written by
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
 
-e-mail: <minseungkim1017@gmail.com> 

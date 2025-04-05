@@ -73,10 +73,7 @@ Here's a brief workflow of the code. There are three main python files that each
 - `pickle`
 - more...
 
-## Contact Me:
+## Written by
 
-Roger Kim
+Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
 
-[Github](https://github.com/kmsrogerkim)
-
-e-mail: <minseungkim1017@gmail.com> 
