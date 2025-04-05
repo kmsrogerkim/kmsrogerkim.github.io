@@ -7,15 +7,17 @@ sidebar_main: true
 ---
 # Roger Kim
 
-Welcome! I am Roger Kim, a computer science student at Hanyang University in Seoul, South Korea. With expertise in Python and experience in C, C++, and C#, I am now aiming to work as a freelance web developer, using Django as my framework. Additionally, I have a thorough understanding of networking fundamentals and is proficient in various DevOps tools, such as Docker, AWS ECS, Git, and GitHub.
+Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs using **Django REST Framework (DRF)**. 
+
+I am currently participating as a student researcher at Dr. Jin Yong Jeon's Vibro-Acoustics Medical Lab at HYU, developing Digital Signal Processing algorithm & Deep Learning model for automatic cough counting. 
+
+Additionally, I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions and so on. Finally, I am experienced in team working and is experienced with agile culture such as backlogs.
 
 ## My key skills
-- Back-end development with ***django***
-- REST API with ***DRF(Django Rest Framework)***
-- Containerization with ***docker***
-- Data Manipulation with ***python***
-- Deploying with various ***AWS*** tools(Elastic Containers, RDS, VPC, etc.)
-- Designing Software
+- Backend development with ***Django*** and ***DRF(Django Rest Framework)***
+- Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
+- Containerization with ***Docker***
+- Data Manipulation with ***Python***
 
 ## Projects
 ## Web-application(Backend) - TOYKI (Developing)
