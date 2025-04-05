@@ -179,4 +179,3 @@ Anyways, I hope my post helped make your developing life better.
 ## Contact Me:
 Roger Kim [[Github](https://github.com/kmsrogerkim)]
 
-e-mail: <minseungkim1017@gmail.com> 
