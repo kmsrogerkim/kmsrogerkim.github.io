@@ -60,17 +60,20 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
 - **PostgreSQL** on **RDS** for DB
 
 ### Related Articles
+
 #### AWS
-1. [AWS VPC Crash Course](https://kmsrogerkim.github.io/aws/aws-vpc/)
-2. [Basic IAM Features](https://kmsrogerkim.github.io/aws/aws-basic-iam-features/)
+- [AWS VPC Crash Course](https://kmsrogerkim.github.io/aws/aws-vpc/)
+- [Basic IAM Features](https://kmsrogerkim.github.io/aws/aws-basic-iam-features/)
+
 #### DRF
-1. [Introduction to Django Rest Framework](https://kmsrogerkim.github.io/django/django-intro-to-drf/)
-2. [Understanding DRF's Serializer](https://kmsrogerkim.github.io/django/django-drf-serializers/)
-3. [JWT feat. Django](https://kmsrogerkim.github.io/django/jwt/)
-4. [Customize DRF Simplejwt](https://kmsrogerkim.github.io/python/customize-opensource/)
+- [Customize DRF Simplejwt](https://kmsrogerkim.github.io/python/customize-opensource/)
+- [Introduction to Django Rest Framework](https://kmsrogerkim.github.io/django/django-intro-to-drf/)
+- [JWT feat. Django](https://kmsrogerkim.github.io/django/jwt/)
+- [Understanding DRF's Serializer](https://kmsrogerkim.github.io/django/django-drf-serializers/)
+
 #### DevOps
-1. [Github Actions to Automate Image Pushing & Django Testing](https://kmsrogerkim.github.io/devops/github-actions/)
-2. [Dependency Management with Poetry](https://kmsrogerkim.github.io/python/python-dependency-management-with-poetry/)
+- [Dependency Management with Poetry](https://kmsrogerkim.github.io/python/python-dependency-management-with-poetry/)
+- [Github Actions to Automate Image Pushing & Django Testing](https://kmsrogerkim.github.io/devops/github-actions/)
 
 
 ## Fun Little Projects
