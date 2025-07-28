@@ -29,16 +29,16 @@ Furthermore, I am experienced in team working and is experienced with agile cult
 - Integrated ***Computer Vision Model*** into ***DSP Algorithm*** for Automated Cough Counting & Segmentation
 
 ## Projects
-## Cough Segmentation & Diagnosis
+## Cough Segmentation
 <p float="left">
   <img src="/assets/img/SLab.png" width="100%" />
   <img src="/assets/img/cough_counting_process.png" width="100%" />
   <img src="/assets/img/segmented_cough.png" width="100%" />
 </p>
 
-I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cough Sounds](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=22761988&t=board), when I wasI participating at the [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU. Integrated ***Computer Vision Model*** and ***DSP Algorithm*** together for Automated Cough Counting & Segmentation.
+I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cough Sounds](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=22761988&t=board), when I was participating at the [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU. Integrated ***Computer Vision Model*** and ***DSP Algorithm*** together for Automated Cough Counting & Segmentation.
 
-**Tech Stack**
+### Tech Stack
 - **AWS** for deployment
 - **DRF** & **ONNX** for shipping DL Models
 - **Minimizing Docker Image for DL Models**
@@ -49,15 +49,29 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
   <img src="/assets/img/toyki-homepage.png" width="100%" />
 </p>
 
-[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It is currently under development, and I am developing Backend API. Learn more about [TOYKI](https://toyki-homepage.vercel.app/) here (Or just click the blue TOYKI text): https://toyki-homepage.vercel.app/
+[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It is currently under development, and I am developing Backend API. Learn more about [TOYKI here](https://toyki-homepage.vercel.app/): https://toyki-homepage.vercel.app/
 
 
-**Tech Stack**
+### Tech Stack
 - React
 - **DRF** for REST API
 - **Docker** for containerization
 - **ECS** for deployment
 - **PostgreSQL** on **RDS** for DB
+
+### Related Articles
+#### AWS
+1. [AWS VPC Crash Course](https://kmsrogerkim.github.io/aws/aws-vpc/)
+2. [Basic IAM Features](https://kmsrogerkim.github.io/aws/aws-basic-iam-features/)
+#### DRF
+1. [Introduction to Django Rest Framework](https://kmsrogerkim.github.io/django/django-intro-to-drf/)
+2. [Understanding DRF's Serializer](https://kmsrogerkim.github.io/django/django-drf-serializers/)
+3. [JWT feat. Django](https://kmsrogerkim.github.io/django/jwt/)
+4. [Customize DRF Simplejwt](https://kmsrogerkim.github.io/python/customize-opensource/)
+#### DevOps
+1. [Github Actions to Automate Image Pushing & Django Testing](https://kmsrogerkim.github.io/devops/github-actions/)
+2. [Dependency Management with Poetry](https://kmsrogerkim.github.io/python/python-dependency-management-with-poetry/)
+
 
 ## Fun Little Projects
 ### cmpnyinfo
