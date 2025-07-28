@@ -36,9 +36,13 @@ Furthermore, I am experienced in team working and is experienced with agile cult
   <img src="/assets/img/segmented_cough.png" width="100%" />
 </p>
 
-[VAM]
+I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cough Sounds](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=22761988&t=board), when I wasI participating at the [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU. Integrated ***Computer Vision Model*** and ***DSP Algorithm*** together for Automated Cough Counting & Segmentation.
 
-The [project](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=22761988&t=board) I participated at [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU. Integrated ***Computer Vision Model*** into ***DSP Algorithm*** for Automated Cough Counting & Segmentation.
+**Tech Stack**
+- **AWS** for deployment
+- **DRF** & **ONNX** for shipping DL Models
+- **Minimizing Docker Image for DL Models**
+- **Python** for DSP algorithms (eg. librosa)
 
 ## TOYKI
 <p float="left">
