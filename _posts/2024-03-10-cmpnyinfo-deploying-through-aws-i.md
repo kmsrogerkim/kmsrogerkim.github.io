@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "cmpnyinfo: deploying through aws I"
-categories: cmpnyinfo
-tag: [nginx, wsgi, web-server, docker, containerization]
+categories: backend 
+tag: [nginx, wsgi, web-server, docker, containerization, backend]
 ---
 ### Subtitle: containerizing nginx, gunicorn and django
 

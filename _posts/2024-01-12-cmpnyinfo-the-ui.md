@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: the UI"
-categories: cmpnyinfo
+categories: other 
 tag: [html-css, front-end, ui]
 ---
 

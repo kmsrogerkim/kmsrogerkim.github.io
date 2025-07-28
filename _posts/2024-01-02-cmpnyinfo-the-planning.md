@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: the planning"
-categories: cmpnyinfo
+categories: other 
 ---
 
 ## Introduction

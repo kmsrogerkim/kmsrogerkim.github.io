@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: upgrading the API"
-categories: cmpnyinfo
+categories: other 
 tag: [rest-api, backend]
 ---
 

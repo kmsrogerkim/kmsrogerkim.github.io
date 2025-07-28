@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: deploying through aws II"
-categories: cmpnyinfo
+categories: aws 
 tag: [aws, ecs]
 ---
 ### Subtitle: the basics of ECS

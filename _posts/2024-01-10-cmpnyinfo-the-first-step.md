@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: the first step"
-categories: cmpnyinfo
+categories: python 
 tag: [python, dependency-management, virtualenv, django, db, dbms]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: deploying through aws III(fin)"
-categories: cmpnyinfo
+categories: aws 
 tag: [aws, ecs]
 ---
 ### Subtitle: uploading image to ecr; deploying with ecs

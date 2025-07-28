@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: the architecture"
-categories: cmpnyinfo
+categories: devops 
 tag: software-architecture
 ---
 
