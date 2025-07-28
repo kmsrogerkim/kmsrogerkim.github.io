@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "cmpnyinfo: the planning"
-categories: other 
+title: "cmpnyinfo: visualizing financial statements"
+categories: backend 
 ---
 
 ## Introduction

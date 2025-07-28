@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "cmpnyinfo: the first step"
-categories: other 
-tag: [python, dependency-management, virtualenv, django, db, dbms]
+title: "cmpnyinfo: setting up the development environment"
+categories: backend 
+tag: [python, dependency-management, virtualenv, django, dbms, backend]
 ---
 
 ## Introduction
@@ -14,13 +14,13 @@ Now it's time to start building the website. In this page, I am going to talk ab
 
 If you want to know about the general planning stage, and the structure of the website, visit my [Previous Blogs](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-planning/)
 
-## Setting Up an Isolated Environment
+## Setting up and isolated environment
 
 I am currently developing in WSL2, with Ubuntu distro, in Windows 11. Developing in WSL has its pros and cons, which I might discuss in another post, but the experience havn't been too bad for me.
 
 I created a python virtual environment using the _virtualenv_ and _virtualenvwrapper_ package. The detailed steps are describe in [this stackoverflow page](https://stackoverflow.com/questions/12232421/virtualenvwrapper-commands-arent-working)
 
-## Why use virtualenv: short discussion about version control in python
+## Why use virtualenv: short discussion about virtual-envs in python
 The _virtualenv_ package is one of many ways to manage dependencies for your python applications/projects. I am using the _virtualenv_ and _virtualenvwrapper_ packages, which was considered the standard way until few years ago, I think; (I don't know I'm just a student). 
 
 It allows you to:
@@ -43,7 +43,7 @@ Back in the days (which I am not familiar with), ***setup.py*** file was the go-
 
 For my website, I'm just going to stick with _requirements.txt_ file. But I am planning to ***study more about professional project and dependency management*** in near future.
 
-## Setting Up the Django Project
+## Setting up the Django project
 
 Install _django_, and for my case, _djangorestframework_ as well, since one of my apps is going to be an API module, as I discussed in [cmpnyinfo: the architecture](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-architecture/).
 

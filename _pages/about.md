@@ -49,7 +49,7 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
   <img src="/assets/img/toyki-homepage.png" width="100%" />
 </p>
 
-[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It is currently under development, and I am developing Backend API. Learn more about [TOYKI here](https://toyki-homepage.vercel.app/): https://toyki-homepage.vercel.app/
+[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It is currently under development, and I am developing Backend API. Learn more about [TOYKI here](https://toyki-homepage.vercel.app/).
 
 
 ### Tech Stack
