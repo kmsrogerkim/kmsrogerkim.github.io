@@ -17,6 +17,7 @@ Furthermore, I am experienced in team working and is experienced with agile cult
 - Backend development with ***Django*** & ***Django Rest Framework***
 - Containerization with ***Docker***
 - Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
+
 ### Machine Learning
 - ***Computer Vision*** (Object Detection, Classification)
 - ***ML*** with ***Digistal Signal Processing***
@@ -55,7 +56,7 @@ The [project](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3Jk
 - **PostgreSQL** on **RDS** for DB
 
 ## Fun Little Projects
-## cmpnyinfo
+### cmpnyinfo
 <p float="left">
   <img src="/assets/img/cmpnyinfo_portfolio_detail_eng.png" width="49%" />
   <img src="/assets/img/cmpnyinfo_portfolio_main.png" width="50%" /> 
@@ -68,7 +69,7 @@ This is a simple website that analyses the financial statements of corporations 
 - **Docker** for containerization
 - **ECS** for deployment
 
-## NAVER Shopping Insight
+### NAVER Shopping Insight
 <p float="left">
   <img src="/assets/img/naver1.png" width="95%" />
   <img src="/assets/img/naver2.png" width="95%" />
@@ -82,7 +83,7 @@ This is an API-based application that gathers information such as,
 - Language use: python
 - Packages used: **`pandas`**, and more.
 
-## Corporate Analysis
+### Corporate Analysis
 <p float="left">
   <img src="/assets/img/corporate_analysis1.png" width="95%" />
   <img src="/assets/img/corporate_analysis2.png" width="95%" />
