@@ -2,7 +2,7 @@
 layout: single
 title: "cmpnyinfo: status report"
 categories: cmpnyinfo
-tag: [ui, back-end]
+tag: [ui, backend]
 ---
 
 ## Introduction

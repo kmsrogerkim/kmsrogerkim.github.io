@@ -2,7 +2,7 @@
 layout: single
 title: "Introduction to Django Rest Framework"
 categories: django
-tag: [django, back-end, python, rest-api, drf]
+tag: [django, backend, python, rest-api, drf]
 ---
 ## Introduction
 In this post, I am going to talk about

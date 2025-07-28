@@ -2,7 +2,7 @@
 layout: single
 title: "Basic IAM features"
 categories: aws
-tag: [aws, back-end]
+tag: [aws, backend]
 ---
 ## Abstract
 - Policies are basically JSON files that contains which actions should be allowed

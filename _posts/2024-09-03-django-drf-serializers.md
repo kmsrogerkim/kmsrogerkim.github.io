@@ -2,7 +2,7 @@
 layout: single
 title: "Understanding DRF's Serializer"
 categories: django
-tag: [django, back-end, python, rest-api, drf]
+tag: [django, backend, python, rest-api, drf]
 ---
 ## Introduction
 This post explains the basic features of django DRF's serializer.

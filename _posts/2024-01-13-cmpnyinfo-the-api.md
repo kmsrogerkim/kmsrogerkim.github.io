@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "cmpnyinfo: the API"
-categories: cmpnyinfo
-tag: [django, rest-api, back-end]
+categories: django 
+tag: [django, rest-api, backend]
 ---
 
 ## Introduction
