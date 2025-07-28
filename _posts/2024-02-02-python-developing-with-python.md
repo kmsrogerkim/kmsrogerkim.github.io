@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "Developing with Python"
-categories: python
-tag: python
+categories: other 
+tag: [python, dependency-management]
 ---
 
 ## Introduction

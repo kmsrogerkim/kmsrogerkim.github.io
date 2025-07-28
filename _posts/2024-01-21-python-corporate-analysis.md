@@ -1,11 +1,9 @@
 ---
 layout: single
 title: "python: corporate analysis"
-categories: python
+categories: other 
 tag: [python, pandas, data-analysis, data-manipulation]
 ---
-## Subtitle: the core feature of cmpnyinfo
-
 ## Introduction
 
 In this post, I am going to talk about the core feature of my website _"cmpnyinfo"_(visite [here](https://kmsrogerkim.github.io/cmpnyinfo/cmpnyinfo-the-planning/) to checkout what my website's about).

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "What and Why: Nginx, Gunicorn"
-categories: django
+categories: backend 
 tag: [backend, django, software-architecture, nginx, wsgi, web-server]
 ---
 

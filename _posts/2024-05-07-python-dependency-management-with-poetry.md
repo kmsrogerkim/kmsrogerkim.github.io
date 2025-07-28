@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "Dependency Management with Poetry"
-categories: python
-tag: [python, dependency-management, virtualenv]
+categories: devops
+tag: [python, dependency-management, virtualenv, devops]
 ---
 ## Introduction
 

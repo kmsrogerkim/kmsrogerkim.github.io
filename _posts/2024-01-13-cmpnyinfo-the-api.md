@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: the API"
-categories: django 
+categories: other 
 tag: [django, rest-api, backend]
 ---
 

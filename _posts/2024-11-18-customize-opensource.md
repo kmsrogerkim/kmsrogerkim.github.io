@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Customize DRF Simplejwt"
-categories: python
+categories: django 
 tag: [python, drf, opensource] 
 ---
 ## Introduction 

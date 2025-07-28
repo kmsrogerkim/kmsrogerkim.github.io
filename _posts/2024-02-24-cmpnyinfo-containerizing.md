@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "cmpnyinfo: containerizing"
-categories: containerization 
+categories: backend 
 tag: [docker, containerization]
 ---
 
