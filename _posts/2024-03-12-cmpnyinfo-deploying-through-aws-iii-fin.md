@@ -155,6 +155,6 @@ Now that's basically it! Now click _"create"_ and pray that your service deploys
 - **Other**: GOOD LUCK. Try your best not to question your entire career!! We all go through this phase!
 
 ## Written by
-
-Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
+> **Roger Kim**  
+> [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)
 

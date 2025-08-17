@@ -163,7 +163,8 @@ REST_FRAMEWORK = {
 The customization is fairly simple. But it was really a great to customize, read and play with opensource code. I finally got to realize what `opensource` really meant, how it works, and how to customize them. I also realized that it is very fatal to read the documents, and I spent quite a time reading the opensource code just to understand how it works. I am looking forward to customize more opensource codes in the future, and one day, maybe even contribute to one.
 
 ## Written by
-Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
+> **Roger Kim**  
+> [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)
 
 
 

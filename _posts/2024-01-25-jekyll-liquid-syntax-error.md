@@ -60,6 +60,6 @@ Or, you can just simply use corresponding HTML entities.
 The original solution might work just fine for you, but if it doesn't, it's certainly worth to try out my solution.
 
 ## Written by
-
-Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
+> **Roger Kim**  
+> [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)
 

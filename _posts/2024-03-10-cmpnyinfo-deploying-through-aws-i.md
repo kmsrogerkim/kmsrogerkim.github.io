@@ -143,6 +143,6 @@ In the next post of the series, I am going to cover
 1. the basics of AWS's Elastic Container Service (ECS)
 
 ## Written by
-
-Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
+> **Roger Kim**  
+> [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)
 

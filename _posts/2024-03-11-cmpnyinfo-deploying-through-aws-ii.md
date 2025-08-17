@@ -52,6 +52,6 @@ ECS is rather a simple alternative to more sophisticated and complex container o
     - Tasks will form according to the task definition you wrote
 
 ## Written by
-
-Roger Kim [[GitHub](https://github.com/kmsrogerkim)] [[LinkedIn](https://www.linkedin.com/in/kmsrogerkim/)] 
+> **Roger Kim**  
+> [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)
 
