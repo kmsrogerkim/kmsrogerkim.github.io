@@ -49,6 +49,22 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
 - **Minimized Docker Image for DL Models**
 - Developed DSP algorithm with **Python**
 
+### Clip
+---
+
+<p float="left">
+  <img src="/assets/img/about/clip_landing.png" width="100%" />
+</p>
+
+[Clip](https://www.clipclub.co.kr/) provides customizable tools that allow any university club to build its own system based on its unique way of operating. By doing so, it automates repetitive administrative tasks, enhances collaboration efficiency, and improves the participation experience for all members.
+
+### Contributions
+- Managed domains with **Route53**, configuring subdomains
+- Deployed static pages using **CloudFront + S3**
+- **Containerized** applications with **Docker** to deploy to **AWS EC2 instances**: 
+  - Flask servers, Flutter web apps, React & Next.js frontends
+- Designed overall software architecture, including URL redirection and service routing logic
+
 ### TOYKI
 ---
 
