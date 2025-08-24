@@ -5,28 +5,29 @@ permalink: /about/
 author_profile: true
 sidebar_main: true
 ---
-# Minseung (Roger) Kim
+# Minseung (Roger) Kim [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)  
 
 Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs using **Django REST Framework (DRF)**. 
 
 I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions and so on.
 Furthermore, I am experienced in team working and is experienced with agile culture that I have learnt while being part of a startup project.
 
+## Experience
+### Student Researcher (Oct 2024 - July 2025)
+- Prof. Jin's [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU
+- Integrated ***Machine Learning*** and ***Digital Signal Processing*** techniques to develop an automated cough counting and segmentation system.
+
 ## Key Skills
 ### Software Engineering
-- Backend development with ***Django*** & ***Django Rest Framework***
+- Backend development with ***Django***
+- REST API development with ***Django Rest Framework (DRF)***
 - Containerization with ***Docker***
 - Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
 
 ### Machine Learning
-- ***Computer Vision*** (Object Detection, Classification)
-- ***ML*** with ***Digistal Signal Processing***
-- Shipping DL Models with ***ONNX***
-
-## Experience
-### Student Researcher (Oct 2024 - July 2025)
-- Prof. Jin's [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU
-- Integrated ***Computer Vision Model*** into ***DSP Algorithm*** for Automated Cough Counting & Segmentation
+- ***Computer Vision***
+- ***ML*** in ***Digistal Signal Processing***
+- Shipping Models with ***ONNX***
 
 ## Projects
 ## Cough Segmentation
@@ -42,7 +43,7 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
 - **AWS** for deployment
 - **DRF** & **ONNX** for shipping DL Models
 - **Minimizing Docker Image for DL Models**
-- **Python** for DSP algorithms (eg. librosa)
+- **Python** for DSP algorithms
 
 ## TOYKI
 <p float="left">
@@ -79,22 +80,23 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
 ## Fun Little Projects
 ### cmpnyinfo
 <p float="left">
-  <img src="/assets/img/cmpnyinfo_portfolio_detail_eng.png" width="100%" />
-  <img src="/assets/img/cmpnyinfo_portfolio_main.png" width="100%" /> 
+  <img src="/assets/img/about/cmpnyinfo_porfolio_unified.png" width="100%" />
 </p>
+
 This is a simple website that analyses the financial statements of corporations registered in Korean Composite Stock Price Indexes(KOSPI). It provides ***essential analytical data*** and ***visual representation*** using variouse types of graphs.
 
 **Tech Stack**
-- pure html&css for front
+- Pure HTML & CSS for front
 - **Django** for back
-- **Docker** for containerization
-- **ECS** for deployment
+- **Docker** and **AWS ECS** for deployment
 
+---
 ### NAVER Shopping Insight
 <p float="left">
   <img src="/assets/img/naver1.png" width="95%" />
   <img src="/assets/img/naver2.png" width="95%" />
 </p>
+
 Visit it [here](https://github.com/kmsrogerkim/NAVER-Shopping-Insight). 
 This is an API-based application that gathers information such as, 
 1. the most searched keywords for shopping categories, from one of South Korea's biggest IT company, NAVER.
@@ -104,11 +106,14 @@ This is an API-based application that gathers information such as,
 - Language use: python
 - Packages used: **`pandas`**, and more.
 
+---
 ### Corporate Analysis
+
 <p float="left">
   <img src="/assets/img/corporate_analysis1.png" width="95%" />
   <img src="/assets/img/corporate_analysis2.png" width="95%" />
 </p>
+
 Visit it [here](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis).
 
 This opensource, API-based project:
@@ -131,5 +136,4 @@ This opensource, API-based project:
 
 **Testing & Others**
 - `pytest`
-- `tqdm`
 - `pickle`
