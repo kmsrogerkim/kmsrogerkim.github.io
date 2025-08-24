@@ -5,7 +5,8 @@ permalink: /about/
 author_profile: true
 sidebar_main: true
 ---
-# Minseung (Roger) Kim [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)  
+# Minseung (Roger) Kim 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)  
 
 Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs using **Django REST Framework (DRF)**. 
 
@@ -30,7 +31,10 @@ Furthermore, I am experienced in team working and is experienced with agile cult
 - Shipping Models with ***ONNX***
 
 ## Projects
-## Cough Segmentation
+
+### Cough Segmentation
+---
+
 <p float="left">
   <img src="/assets/img/SLab.png" width="100%" />
   <img src="/assets/img/cough_counting_process.png" width="100%" />
@@ -39,26 +43,27 @@ Furthermore, I am experienced in team working and is experienced with agile cult
 
 I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cough Sounds](https://vibroacoustic.imweb.me/current/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=22761988&t=board), when I was participating at the [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU. Integrated ***Computer Vision Model*** and ***DSP Algorithm*** together for Automated Cough Counting & Segmentation.
 
-### Tech Stack
-- **AWS** for deployment
-- **DRF** & **ONNX** for shipping DL Models
-- **Minimizing Docker Image for DL Models**
-- **Python** for DSP algorithms
+### Contributions
+- Shipped DL models with **DRF** & **ONNX**
+- Deployed on **AWS**
+- **Minimized Docker Image for DL Models**
+- Developed DSP algorithm with **Python**
 
-## TOYKI
+### TOYKI
+---
+
 <p float="left">
   <img src="/assets/img/toyki-homepage.png" width="100%" />
 </p>
 
-[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It is currently under development, and I am developing Backend API. Learn more about [TOYKI here](https://toyki-homepage.vercel.app/).
+[TOYKI](https://toyki-homepage.vercel.app/) is a service that provides opportunities to overcome the limitations of offline human relationships and enables everyone to build social networks more easily. It was a startup project that was done under the [Hanyang Institute for Entrepreneurship (한양대 창업지원단)](https://startup.hanyang.ac.kr/en). The project was elected as a finalist in the 2024 [Student Startup Promising Team 300+ Competition](https://u300.kr/)
 
 
-### Tech Stack
-- React
-- **DRF** for REST API
-- **Docker** for containerization
-- **ECS** for deployment
-- **PostgreSQL** on **RDS** for DB
+### Contributions
+- Frontend development with React
+- Built REST API with **Django Rest Framework**
+- Containerized and deployed with **Docker**, **AWS ECS**
+- Set up & managed DB with **PostgreSQL** running on **AWS RDS**
 
 ### Related Articles
 
@@ -77,8 +82,10 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
 - [Github Actions to Automate Image Pushing & Django Testing](https://kmsrogerkim.github.io/devops/github-actions/)
 
 
-## Fun Little Projects
+## Personal Projects
+
 ### cmpnyinfo
+---
 <p float="left">
   <img src="/assets/img/about/cmpnyinfo_porfolio_unified.png" width="100%" />
 </p>
@@ -90,8 +97,8 @@ This is a simple website that analyses the financial statements of corporations 
 - **Django** for back
 - **Docker** and **AWS ECS** for deployment
 
----
 ### NAVER Shopping Insight
+---
 <p float="left">
   <img src="/assets/img/naver1.png" width="95%" />
   <img src="/assets/img/naver2.png" width="95%" />
@@ -102,12 +109,11 @@ This is an API-based application that gathers information such as,
 1. the most searched keywords for shopping categories, from one of South Korea's biggest IT company, NAVER.
 2. other such as monthly searched numbers, product numbers, competition index, etc.
 
-**⚙️ Languages and Packages Used**
-- Language use: python
-- Packages used: **`pandas`**, and more.
+**⚙️ Packages Used**
+- **`pandas`**, and more.
 
----
 ### Corporate Analysis
+---
 
 <p float="left">
   <img src="/assets/img/corporate_analysis1.png" width="95%" />
@@ -124,16 +130,16 @@ This opensource, API-based project:
     - Profit Status
 3. visualizes those datas in various types of graphs. (Box plot, scatter plot, etc)
 
-**⚙️ Frameworks and Packages Used**
+**Packages Used**
 
-**Financial Data Retrieval**
-- `OpenDartReader` ***(API)***
-- `FinanceDataReader`
+- **Financial Data Retrieval**
+  - `OpenDartReader` ***(API)***
+  - `FinanceDataReader`
 
-**Data Analysis & Manipulation**
-- `pandas`
-- `numpy`
+- **Data Analysis & Manipulation**
+  - `pandas`
+  - `numpy`
 
-**Testing & Others**
-- `pytest`
-- `pickle`
+- **Others**
+  - `pytest`
+  - `pickle`
