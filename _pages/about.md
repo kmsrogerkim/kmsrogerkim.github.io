@@ -14,8 +14,8 @@ I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions
 Furthermore, I am experienced in team working and is experienced with agile culture that I have learnt while being part of a startup project.
 
 ## Experience
-### Student Researcher (Oct 2024 - July 2025)
-- Prof. Jin's [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU
+### Research Intern (Oct 2024 - July 2025)
+- Prof. Jeon's [Vibro-Acoustics Medical Lab](https://vibroacoustic.imweb.me/) at HYU
 - Integrated ***Machine Learning*** and ***Digital Signal Processing*** techniques to develop an automated cough counting and segmentation system.
 
 ## Key Skills
