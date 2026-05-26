@@ -1,12 +1,12 @@
 ---
 layout: single
-title: "8 Essential Computer Vision Papers I Read: From VAE to DiT"
+title: "8 Essential Computer Vision Papers I Read as a CS Undergrad: From VAE to DiT"
 categories: AI
 tag: [AI, CV]
 use_math: true
 ---
 
-## 8 Essential Computer Vision Papers I Read: From VAE to DiT
+## 8 Essential Computer Vision Papers I Read as a CS Undergrad: From VAE to DiT
 
 Here are 8 essential computer vision papers I read, in time order.
 
@@ -22,33 +22,21 @@ Here are 8 essential computer vision papers I read, in time order.
 
 ## Introduction
 
-These papers are not isolated ideas. They build on each other. The story starts with autoencoders. VAE introduced a probabilistic version of autoencoders and, more importantly, the ELBO objective. Instead of compressing images into a fixed vector, VAE treated the latent space as a probability distribution. This idea became extremely important later for generative modeling.
+Modern computer vision and generative modeling evolved through a sequence of connected breakthroughs. In 2013, the Variational Autoencoder (VAE) introduced probabilistic latent-variable modeling and the Evidence Lower Bound (ELBO), providing a practical framework for learning continuous latent representations. Instead of mapping an image into a fixed deterministic vector, VAE modeled the latent space as a distribution, which later became important for scalable generative models and latent-space compression.
 
-Then DDPM introduced diffusion models. Instead of generating an image in one shot, DDPM gradually denoises random noise into an image. This ended up producing much better image quality than many older generative models.
+For several years, generative models struggled with either unstable training, low sample quality, or limited diversity. In 2020, Denoising Diffusion Probabilistic Models (DDPM) changed the direction of the field by framing image generation as iterative denoising. Rather than generating an image in a single step, DDPM learned to reverse a Markov noising process and gradually recover data from Gaussian noise. Diffusion models produced significantly higher visual fidelity and more stable training behavior than many previous approaches, quickly becoming one of the dominant paradigms in image synthesis. However, diffusion models were computationally expensive because the generation process required many sequential denoising steps and operated directly in high-dimensional pixel space.
 
-At almost the same time, ViT adapted transformers to computer vision. Before ViT, CNNs dominated vision. ViT showed that transformers could work on images by splitting images into patches and treating them like tokens.
+During the same period, Vision Transformer (ViT) introduced transformers into computer vision by treating image patches as token sequences. This reduced dependence on convolutional inductive bias and showed that transformer scaling behavior could extend beyond natural language processing. In 2021, Masked Autoencoders (MAE) further strengthened transformer-based vision learning through self-supervised masked reconstruction, allowing ViTs to learn efficient image representations from large-scale unlabeled data. Together, ViT and MAE established transformers as scalable backbone architectures for future generative vision systems.
 
-Then CLIP connected vision and language. CLIP learned image representations using natural language supervision instead of fixed class labels. This changed how people thought about representation learning in vision.
+Also in 2021, CLIP replaced closed-set classification objectives with contrastive image-text representation learning. Instead of predicting fixed labels, CLIP learned a shared embedding space between images and natural language, which later became critical for prompt-conditioned image generation systems. In the same year, Classifier-Free Guidance (CFG) solved another major limitation of diffusion models: weak conditional control. By combining conditional and unconditional diffusion predictions during sampling, CFG greatly improved prompt alignment without requiring an external classifier, making controllable text-to-image generation practical.
 
-CFG improved diffusion models further. Classifier-Free Guidance made conditional generation much stronger and simpler. Prompt-following image generation became dramatically better because of this paper.
+In 2022, Latent Diffusion Models (LDM) combined many of these developments into a single efficient framework. LDM used VAE-based latent compression to avoid diffusion in pixel space, reducing computational cost while preserving image quality. It used DDPM-style denoising as the generative mechanism and relied on CLIP-based text conditioning together with CFG-based sampling guidance for controllable generation. LDM demonstrated that high-resolution text-to-image synthesis could become both practical and scalable, and it became the foundation of systems such as Stable Diffusion.
 
-MAE pushed self-supervised learning for vision transformers. MAE masked image patches and reconstructed them, similar to masked language modeling in NLP. This made ViT training more scalable and data-efficient.
+Later in 2022, Diffusion Transformers (DiT) replaced the U-Net diffusion backbone with transformer architectures derived from the ViT lineage. DiT showed that transformers were not only effective for representation learning, but also highly scalable for diffusion-based image generation itself. This marked a broader transition toward transformer-native generative vision systems and influenced later work in image, video, and multimodal generation.
 
-Then LDM combined many of these ideas together.
+This blog post goes through the core ideas, mathematical formulations, and architectural contributions introduced by each paper, with a focus on how these works connect to each other historically and technically. Rather than treating these papers as isolated breakthroughs, the goal is to examine how concepts such as latent-variable modeling, diffusion-based generation, transformer architectures, self-supervised learning, and multimodal conditioning gradually built the foundation of modern computer vision and generative AI systems. Through this progression, the post introduces eight papers that significantly influenced my understanding of the field.
 
-LDM used:
-- VAE-style latent spaces
-- diffusion models from DDPM
-- transformer-era representations
-- conditioning techniques like CFG
-
-Instead of diffusing directly on pixels, it diffused inside a compressed latent space. This made high-quality image generation practical.
-
-Finally, DiT pushed transformers directly into diffusion models.
-
-Instead of using U-Nets, DiT used transformers as the backbone of diffusion models. This helped transformers become mainstream in modern generative vision systems.
-
-## Core Ideas And How The Papers Connect
+## Diving into Each Papers
 
 ### 1. Variational Autoencoder (VAE)
 
@@ -79,6 +67,13 @@ LDM directly depends on this idea.
 Stable Diffusion does not diffuse on raw pixels. It first compresses images into a latent space using an autoencoder-like model inspired by VAE ideas.
 
 Without latent-space modeling, diffusion models would be far more expensive.
+
+I cannot stretch enough the importance of this paper. If you would like to dig deeper, please try out this series of blog posts by Professor Yoo.
+1. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (1)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-1.html?m=1)
+2. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (2)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-2.html?m=1)
+
+*_Yes they are written in Korean...not because I'm Korean but because this is the best blog post I could find that discusses about VAE in such great depth and detail._
+
 
 ### 2. Denoising Diffusion Probabilistic Models (DDPM)
 
