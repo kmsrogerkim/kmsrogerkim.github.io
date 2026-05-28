@@ -173,7 +173,7 @@ The key result was not merely that transformers work for vision, but that they s
 ## 4. CLIP
 
 <p align="center">
-  <img src="/assets/img/vit/clip_architecture.png" width="100%">
+  <img src="/assets/img/clip_architecture.png" width="100%">
 </p>
 
 CLIP learns aligned image and text representations through contrastive learning. Instead of predicting fixed class labels, CLIP learns aligned image-text embeddings with a contrastive loss:
