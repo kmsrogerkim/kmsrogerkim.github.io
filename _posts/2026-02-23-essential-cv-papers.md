@@ -33,15 +33,21 @@ This blog post goes through the core ideas, mathematical formulations, and archi
 
 ## 1. Variational Autoencoder (VAE)
 
-A VAE learns an encoder that maps data into a latent distribution and a decoder that reconstructs samples from latent variables. Instead of learning a deterministic representation, VAE approximates the intractable posterior $q_\phi(z|x)\approx p_\theta(z|x)$ where $p_\theta(z|x)$ and the margianl likelihood
+A VAE learns an encoder that maps data into a latent distribution and a decoder that reconstructs samples from latent variables. Instead of learning a deterministic representation, VAE approximates the intractable posterior 
 
 $$
-p_\theta(z|x)\frac{p_\theta(x|z)p(z)}{p_\theta(x)}
+q_\phi(z|x)\approx p_\theta(z|x)
+$$ 
+
+where the true posterior and the margianl likelihood are generally expensive to compute exactly. 
+
+$$
+p_\theta(z|x) = \frac{p_\theta(x|z)p(z)}{p_\theta(x)}
 \qquad
-p_\theta(x)\int p_\theta(x|z)p(z)dz
+p_\theta(x) = \int p_\theta(x|z)p(z)dz
 $$
 
-are generally expensive to compute exactly. VAE therefore introduces variational inference and optimizes the Evidence Lower Bound (ELBO) from the original paper:
+VAE therefore introduces variational inference and optimizes the Evidence Lower Bound (ELBO) from the original paper:
 
 $$
 \mathcal{L}(\theta,\phi;x^{(i)})
@@ -83,7 +89,7 @@ It established the idea that generation can happen inside a structured latent sp
 1. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (1)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-1.html?m=1)
 2. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (2)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-2.html?m=1)
 
-*_They are written in Korean... but this is the best blog post I could find discussing VAE in such depth and detail._*
+_They are written in Korean... but this is the best blog post I could find discussing VAE in such depth and detail._
 
 ## 2. Denoising Diffusion Probabilistic Models (DDPM)
 
@@ -388,14 +394,14 @@ Image generation is rapidly extending into video generation, where the central c
 Although diffusion models produce high-quality outputs, sampling remains expensive. Current research focuses on reducing sampling steps through methods such as Flow Matching, which reformulates generative modeling through continuous probability flows.
 
 - Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., & Le, M. (2022). **Flow matching for generative modeling**. *arXiv preprint arXiv:2210.02747.*
-https://arxiv.org/abs/2210.02747
+[https://arxiv.org/abs/2210.02747](https://arxiv.org/abs/2210.02747)
 
 ### 4. World models
 
 The field is increasingly focused not only on visual quality, but also on reasoning, physical consistency, interaction, and long-horizon generation. One influential direction is Genie, which explores generative interactive world models for agents and simulation.
 
 - Bruce, J., et al. (2024). **Genie: Generative interactive environments**. *arXiv preprint arXiv:2402.15391.*
-https://arxiv.org/abs/2402.15391
+[https://arxiv.org/abs/2402.15391](https://arxiv.org/abs/2402.15391)
 
 
 
