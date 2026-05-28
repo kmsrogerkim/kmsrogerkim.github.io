@@ -92,6 +92,11 @@ It established the idea that generation can happen inside a structured latent sp
 *_They are written in Korean... but this is the best blog post I could find discussing VAE in such depth and detail._*
 
 ## 2. Denoising Diffusion Probabilistic Models (DDPM)
+
+<p align="center">
+  <img src="/assets/img/ddpm.png" width="90%">
+</p>
+
 DDPM formulates image generation as iterative denoising. The forward process gradually corrupts data with Gaussian noise:
 
 $$
@@ -104,24 +109,7 @@ x_t;
 )
 $$
 
-After many timesteps:
-
-$$
-x_T \sim \mathcal{N}(0, I)
-$$
-
-The model then learns the reverse process:
-
-$$
-p_\theta(x_{t-1}|x_t)
-$$
-
-which progressively removes noise and reconstructs the data distribution.
-
-
-<p align="center">
-  <img src="/assets/img/ddpm.png" width="90%">
-</p>
+After many timesteps $ x_T \sim \mathcal{N}(0, I) $. The model then learns the reverse process $ p_\theta(x_{t-1}|x_t) $ which progressively removes noise and reconstructs the data distribution.
 
 Instead of directly predicting images, DDPM predicts the noise added at each timestep:
 
@@ -129,24 +117,9 @@ $$
 L_{simple} = \mathbb{E}_{x_0,\epsilon,t} \left[\|\epsilon -\epsilon_\theta(x_t, t)\|^2\right]
 $$
 
+After DiT, the field is moving toward unified generative systems that combine multimodal understanding, scalable diffusion architectures, and interactive world modeling. Current directions include video generation, faster diffusion methods such as Flow Matching, and long-horizon reasoning for agents and simulation.
+
 To dive deeper, please refer to [my blog post about DDPM!](https://kmsrogerkim.github.io/ai/ddpm/)
-
-### Core contribution
-
-DDPM introduced:
-- diffusion-based generative modeling
-- iterative denoising as a generation process
-- stable likelihood-based training for image synthesis
-
-Before diffusion models, GANs dominated image generation but suffered from:
-- unstable adversarial optimization
-- mode collapse
-- limited sample diversity
-
-DDPM replaced adversarial training with a denoising objective and achieved significantly more stable optimization and higher sample quality. Basically, they established the diffusion framework, which is now the standard for generative models. This paper led to:
-- CFG for controllable generation
-- LDM for latent-space diffusion
-- DiT for transformer-based diffusion backbones
 
 ## 3. Vision Transformer (ViT)
 
@@ -156,24 +129,28 @@ Before ViT, CNNs dominated computer vision because images were assumed to requir
   <img src="/assets/img/vit/vit_architecture.png" width="100%">
 </p>
 
-Given an image $ x \in \mathbb{R}^{H \times W \times C} $, ViT splits the image into fixed-size patches:
+Given an image $x \in \mathbb{R}^{H \times W \times C}$, ViT partitions the image into fixed-size patches:
 
-```text
-image -> patches -> tokens -> transformer
-```
+$$
+x \rightarrow {x_p^1, x_p^2, ..., x_p^N}
+$$
 
-Each flattened patch is projected into a token embedding $ z_0 = [x_p^1E; x_p^2E; ...; x_p^NE] $. The transformer encoder then processes these patch tokens similarly to words in NLP.
+Each flattened patch is linearly projected into a token embedding:
 
-### Core contribution
+$$
+z_0 = [x_p^1E; x_p^2E; ...; x_p^NE] + E_{pos}
+$$
 
-The key result was that transformer scaling laws also apply to vision when trained on sufficiently large datasets. This paper fundamentally changed vision architectures.
+The token sequence is then processed through transformer self-attention:
 
-ViT became the architectural foundation for:
-- MAE self-supervised learning
-- transformer-based diffusion models like DiT
-- modern multimodal systems
+$$
+\text{softmax}
+\left(
+\frac{QK^T}{\sqrt d}
+\right)V
+$$
 
-Transformers later became central not only for representation learning, but also for image generation itself.
+The key result was not merely that transformers work for vision, but that they scale remarkably well with data and model size. ViT fundamentally changed modern vision architectures and later became the foundation for MAE, DiT, and many multimodal generative systems.
 
 ## 4. CLIP
 
@@ -207,212 +184,100 @@ which later becomes the text condition used in diffusion.
 
 ### Core contribution
 
-The important shift was replacing fixed-label supervision with natural language supervision at internet scale.
+The important shift introduced by CLIP was replacing fixed-label supervision with natural language supervision at internet scale. Instead of learning closed-set classification boundaries, CLIP learned a shared semantic embedding space between images and text. This later became the conditioning interface for modern diffusion models:
 
-CLIP enabled:
-- text-conditioned image generation
-- prompt understanding
-- multimodal systems
+$$
+c = f_{text}(\text{prompt})
+$$
 
-Later text-to-image systems used CLIP embeddings to condition diffusion models on natural language prompts. Without CLIP, prompt-based generation would have been significantly weaker.
+where text embeddings guide image generation through cross-attention and CFG-based sampling. CLIP therefore became one of the key foundations of prompt-conditioned generative systems and modern multimodal models.
 
 ## 5. Classifier-Free Guidance (CFG)
 
-### Background: From ELBO To Diffusion Objectives
+CFG becomes much easier to understand when viewed as a continuation of the probabilistic framework introduced by VAE and DDPM.
 
-To understand why CFG mattered, it is important to trace the evolution of diffusion training objectives back to VAE.
-
-VAE introduced the Evidence Lower Bound (ELBO):
-
-$$
-\log p(x) \geq
-\mathbb{E}_{q(z|x)}[\log p(x|z)]
-
-D_{KL}(q(z|x)|p(z))
-$$
-
-This objective turned probabilistic latent-variable modeling into a tractable optimization problem.
-
-Instead of directly maximizing:
+VAE introduced variational optimization through the ELBO:
 
 $$
 \log p(x)
+\geq
+\mathbb{E}_{q(z|x)}[\log p(x|z)]
+
+D_{KL}(q(z|x)||p(z))
 $$
 
-which is often intractable, VAE optimized a lower bound of the data likelihood. This became one of the most important ideas in deep generative modeling. Later diffusion models inherited this probabilistic viewpoint.DDPM also derives from a variational objective and optimizes a form of ELBO over the entire diffusion trajectory:
+DDPM inherited this probabilistic viewpoint and derived a variational objective over the diffusion trajectory:
 
 $$
 L_{VLB}
 
-\mathbb{E}_q
+\mathbb{E}*q
 \left[
-
-\log p_\theta(x_0)
-+
-\sum_{t=1}^{T}
+\sum*{t=1}^{T}
 D_{KL}
 \left(
 q(x_{t-1}|x_t,x_0)
-|
+||
 p_\theta(x_{t-1}|x_t)
 \right)
 \right]
 $$
 
-This connects VAE and diffusion models more closely than they first appear.
-
-Both frameworks:
-
-* define probabilistic latent variables
-* optimize variational bounds
-* learn generative processes through tractable approximations
-
-However, DDPM later simplified this objective into a practical denoising loss:
+which was later simplified into the practical denoising objective:
 
 $$
 L_{simple}
+
 \mathbb{E}_{x_0,\epsilon,t}
 \left[
-|
+||
 \epsilon
 
 \epsilon_\theta(x_t,t)
-|^2
+||^2
 \right]
 $$
 
-This simplification made diffusion models significantly easier and more stable to train.
-
----
-
-### Core idea
-
-Early conditional diffusion systems relied on separately trained classifiers to guide generation toward desired conditions.
-
-The idea was to modify the reverse diffusion process using classifier gradients:
+CFG extends this same denoising framework into conditional generation by training both:
 
 $$
-\nabla_{x_t} \log p(c|x_t)
+\epsilon_\theta(x_t,t,c),
+\quad
+\epsilon_\theta(x_t,t)
 $$
 
-where:
-
-* $x_t$ is the noisy image at timestep $t$
-* $c$ is the conditioning input
-
-The guided sampling process became:
+through random condition dropping:
 
 $$
-\hat{\epsilon}_\theta(x_t,c) = \epsilon_\theta(x_t) s \sigma_t \nabla_{x_t} \log p(c|x_t)
+p(c=\varnothing)=p_{drop}
 $$
 
-However, this approach had several problems:
-
-* an additional classifier had to be trained
-* classifier gradients became unstable at high noise levels
-* training and inference complexity increased
-
-CFG removed the need for external classifiers entirely.
-
-Instead, the diffusion model jointly learned:
-
-* conditional generation
-* unconditional generation
-
-During training, conditions are randomly dropped:
-
-$$
-p(c = \varnothing)
-
-p_{drop}
-$$
-
-This allows the same model to learn both:
-
-$$
-\epsilon_\theta(x_t,c)
-$$
-
-and:
-
-$$
-\epsilon_\theta(x_t)
-$$
-
-The final guided prediction becomes:
+Sampling then combines conditional and unconditional predictions:
 
 $$
 \hat{\epsilon}_\theta
 
-\epsilon_\theta(x_t)
+\epsilon_\theta(x_t,t)
 +
 w
 (
-\epsilon_\theta(x_t,c)
+\epsilon_\theta(x_t,t,c)
 
-\epsilon_\theta(x_t)
+\epsilon_\theta(x_t,t)
 )
 $$
 
-where:
+where the residual term isolates the conditional signal introduced by the prompt. Earlier diffusion systems relied on external classifier gradients for guidance, but CFG removed this requirement entirely while dramatically improving prompt alignment. This simple modification became one of the most important practical advances in modern diffusion models.
 
-* $w$ controls guidance strength
-* larger $w$ increases prompt adherence
-* $w=0$ becomes unconditional generation
-* larger $w$ trades diversity for stronger conditioning
-
-The key intuition is that:
-
-$$
-\epsilon_\theta(x_t,c)
-
-\epsilon_\theta(x_t)
-$$
-
-isolates the conditional signal introduced by the prompt.
-
-CFG then amplifies this signal during sampling.
-
----
-
-### Core contribution
-
-CFG introduced:
-
-* classifier-free conditional guidance
-* controllable prompt-conditioned sampling
-* stronger conditioning without external classifiers
-
-More importantly, CFG made diffusion models practically controllable.
-
-Earlier diffusion systems could generate high-quality images, but prompt alignment was often weak or unstable.
-
-CFG solved this problem with a surprisingly simple modification to sampling.
-
-This paper became one of the most important practical improvements in diffusion models.
 
 ## 6. Masked Autoencoder (MAE)
-
-MAE performs self-supervised learning through masked image reconstruction. Large portions of image patches, often around 75%, are removed.
 
 <p align="center">
   <img src="/assets/img/vit/mae.png" width="100%">
 </p>
 
-Unlike earlier reconstruction methods, MAE uses:
-- a heavy encoder for visible patches
-- a lightweight decoder for reconstruction
+MAE performs self-supervised learning by masking a large portion of image patches and reconstructing the missing content from only the visible patches. Unlike earlier reconstruction-based methods, the encoder processes only unmasked tokens while reconstruction is delegated to a lightweight decoder, making training substantially more efficient despite very high masking ratios. This showed that transformer-based vision models could learn strong semantic representations directly from unlabeled data and significantly strengthened the ViT ecosystem. More broadly, MAE helped establish transformers as scalable visual backbones, indirectly accelerating later transformer-based generative systems such as DiT.
 
-This makes training significantly more efficient.
-
-### Core contribution
-
-MAE introduced:
-- scalable self-supervised learning for ViTs
-- high-ratio masked reconstruction for images
-- efficient transformer pretraining for vision
-
-The paper demonstrated that transformer-based vision models can learn strong image representations from unlabeled data alone. MAE strengthened the ViT ecosystem and accelerated transformer adoption in vision. This indirectly helped transformer-based generative systems like DiT become practical and scalable.
 
 ## 7. Latent Diffusion Models (LDM)
 
@@ -420,82 +285,64 @@ The paper demonstrated that transformer-based vision models can learn strong ima
   <img src="/assets/img/LDM.png" width="100%">
 </p>
 
-LDM compresses images with an autoencoder:
+LDM compresses images into a learned latent space through an autoencoder:
 
 $$
-z=\mathcal{E}(x)
+z=\mathcal{E}(x),
+\qquad
+x=\mathcal{D}(z)
 $$
 
-and diffuses in latent space rather than pixel space. The diffusion loss remains structurally the same as DDPM:
+and performs diffusion directly on latent representations rather than pixel-space tensors. Importantly, the training objective remains almost identical to DDPM:
 
 $$
-L_{\text{LDM}}
-=
-\mathbb{E}
-\left[
-\|\epsilon-\epsilon_\theta(z_t,t,c)\|^2
-\right]
+L_{\text{DDPM}}\mathbb{E}\left[|\epsilon-\epsilon_\theta(x_t,t)|^2\right]
+
+\qquad
+
+L_{\text{LDM}}\mathbb{E}\left[|\epsilon-\epsilon_\theta(z_t,t,c)|^2\right]
 $$
 
-compared with
+with the primary structural change being:
 
 $$
-L_{\text{DDPM}}
-=
-\mathbb{E}
-\left[
-\|\epsilon-\epsilon_\theta(x_t,t)\|^2
-\right]
+x_t \rightarrow z_t
 $$
 
-The main change is
-
-$$
-x_t\rightarrow z_t
-$$
-
-so the model works in a lower-dimensional manifold. Conditioning enters through text embeddings
+This substantially reduces computational cost by moving diffusion onto a lower-dimensional manifold while preserving high perceptual quality. Conditioning is introduced through CLIP text embeddings:
 
 $$
 c=f_{\text{text}}(\text{prompt})
 $$
 
-and CFG strengthens sampling:
+and sampling is guided using CFG:
 
 $$
 \hat\epsilon_\theta
-=
+
 \epsilon_\theta(z_t,t)
 +
-w\Big(\epsilon_\theta(z_t,t,c)-\epsilon_\theta(z_t,t)\Big)
+w\Big(
+\epsilon_\theta(z_t,t,c)
+
+\epsilon_\theta(z_t,t)
+\Big)
 $$
 
-LDM is therefore a composition of
+Conceptually, LDM can be viewed as the convergence of several earlier developments:
 
 $$
-\text{VAE}+\text{DDPM}+\text{CLIP}+\text{CFG}
+\text{VAE}
++
+\text{DDPM}
++
+\text{CLIP}
++
+\text{CFG}
 $$
 
-### Core contribution
+This combination transformed diffusion models from computationally expensive research systems into practical large-scale text-to-image generators and later became the foundation of Stable Diffusion.
 
-LDM introduced:
-- latent-space diffusion
-- practical high-resolution diffusion generation
-- efficient large-scale text-to-image synthesis
-
-This paper combined several earlier breakthroughs into a single practical system:
-- VAE-style latent compression
-- DDPM-style denoising diffusion
-- CLIP-based text conditioning
-- CFG-based controllable sampling
-
-This is where many earlier research ideas became a usable real-world generative system.
-
-### Why it mattered later
-
-LDM became the foundation of systems such as Stable Diffusion.
-
-It demonstrated that high-quality text-to-image generation could become practical on consumer hardware rather than requiring extremely expensive compute.
 
 ## 8. Diffusion Transformer (DiT)
 
@@ -538,80 +385,48 @@ so DiT keeps the diffusion objective while swapping in a transformer backbone.
 
 ### Core contribution
 
-DiT introduced:
-- transformer-native diffusion architectures
-- scalable transformer backbones for image generation
-- diffusion scaling laws for transformers
+DiT replaced convolutional U-Nets with transformer-based diffusion backbones operating on latent patches while preserving the standard diffusion objective.
 
-The key result was that diffusion performance scaled predictably with:
-- model size
-- training compute
-- dataset scale
+The key result was that diffusion models inherit transformer scaling behavior: performance improves predictably with model size, training compute, and dataset scale. DiT accelerated the transition toward transformer-native generative systems and strongly influenced later work in video generation, multimodal generation, and world models.
 
-### Why it mattered later
-
-DiT accelerated the transition toward transformer-native generative systems.
-
-This influenced later work in:
-- video generation
-- multimodal generation
-- world models
-- large-scale generative architecture
 
 ## What's Next?
 
-After DiT, the field is moving toward larger and more unified generative systems. Some of the major directions include: 
-
 ### 1. Multimodal models
 
-Models are no longer only vision models. Modern systems combine:
-- text
-- images
-- video
-- audio
-- actions
+Modern systems jointly model text, images, video, audio, and actions. Representative works include GPT-4o, which unifies multimodal interaction inside a single model.
 
-Examples:
-- GPT-4o
-- Gemini
-- Sora-like systems
+- OpenAI. (2024). **Hello GPT-4o**. *OpenAI.*
+[https://openai.com/index/hello-gpt-4o/](https://openai.com/index/hello-gpt-4o/)
 
 ### 2. Video generation
 
-Image generation is becoming video generation. The hard problem now is:
-- temporal consistency
-- motion understanding
-- world simulation
+Image generation is rapidly extending into video generation, where the central challenges are temporal consistency, motion understanding, and world simulation. A representative example is Sora, which applies diffusion transformers to large-scale video generation.
 
-Diffusion transformers are heavily used here.
+- OpenAI. (2024). **Video generation models as world simulators**. *OpenAI.*
+[https://openai.com/research/video-generation-models-as-world-simulators](https://openai.com/research/video-generation-models-as-world-simulators)
 
 ### 3. Faster diffusion methods
 
-Diffusion models are powerful but slow. A major research direction is reducing sampling steps:
-- consistency models
-- rectified flow
-- flow matching
-- distillation methods
+Although diffusion models produce high-quality outputs, sampling remains expensive. Current research focuses on reducing sampling steps through methods such as Flow Matching, which reformulates generative modeling through continuous probability flows.
 
-### 4. Better world models
+- Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., & Le, M. (2022). **Flow matching for generative modeling**. *arXiv preprint arXiv:2210.02747.*
+https://arxiv.org/abs/2210.02747
 
-The field is moving beyond image quality. Current focus:
-- reasoning
-- physical consistency
-- interaction
-- long-horizon generation
+### 4. World models
 
-This matters for:
-- robotics
-- agents
-- simulation
+The field is increasingly focused not only on visual quality, but also on reasoning, physical consistency, interaction, and long-horizon generation. One influential direction is Genie, which explores generative interactive world models for agents and simulation.
+
+- Bruce, J., et al. (2024). **Genie: Generative interactive environments**. *arXiv preprint arXiv:2402.15391.*
+https://arxiv.org/abs/2402.15391
+
+
 
 ## Final Thoughts
 
-What makes these papers particularly important is not only their individual contributions, but also how naturally they compose into a unified generative framework. VAE introduced latent-variable inference and variational optimization. DDPM reformulated generation as iterative denoising through probabilistic diffusion. ViT and MAE established transformers as scalable visual architectures, while CLIP transformed natural language into a usable conditioning interface. CFG then made diffusion models practically controllable, and LDM combined these ideas into an efficient latent-space generative system. Finally, DiT demonstrated that transformer scaling behavior extends directly into diffusion-based image generation itself.
+How naturally these papers connect into a single generative framework is truly beautiful. Each work extends and reuses ideas introduced by the previous ones. VAE introduced latent-variable inference and variational optimization. DDPM reformulated generation into probabilistic diffusion modeling. ViT and MAE showed that transformers could outperform previous convolutional architectures while introducing scaling behavior into vision. CLIP transformed natural language into a semantic conditioning interface, CFG made diffusion models practically controllable, and LDM unified these developments into an efficient latent-space generative system. Finally, DiT demonstrated that transformer scaling laws extend directly into diffusion-based image generation itself.
 
-Viewed historically, modern generative AI did not emerge from a single breakthrough, but from the gradual convergence of probabilistic modeling, diffusion processes, representation learning, multimodal conditioning, and transformer scaling. Many modern systems still inherit the same mathematical structure introduced across these papers: variational objectives, denoising losses, latent representations, attention mechanisms, and conditional guidance. Understanding how these ideas connect provides a much clearer picture of why current generative models work, how they evolved, and where future architectures may continue to develop.
-
+After reading these 8 papers, I hope you can feel how modern generative AI emerged not from a single breakthrough, but from the gradual convergence of the concepts introduced by them. It is a beautiful journey: as you move from one paper to the next, concepts, equations, and architectural decisions continuously resurface in new forms. Recognizing where those ideas originated—and seeing how later systems inherit and build upon them—brings a surprising sense of coherence and joy to whoever is trying to - or is already in - the field of computer vision.
 
 ## References  
 
