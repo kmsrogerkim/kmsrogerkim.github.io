@@ -33,49 +33,57 @@ This blog post goes through the core ideas, mathematical formulations, and archi
 
 ## 1. Variational Autoencoder (VAE)
 
-A VAE learns:
-- an encoder: image -> latent distribution
-- a decoder: latent -> reconstructed image
-
-Instead of encoding an image into a single deterministic vector $z$, VAE models the latent representation as a probability distribution:
+A VAE learns an encoder that maps data into a latent distribution and a decoder that reconstructs samples from latent variables. Instead of learning a deterministic representation, VAE approximates the intractable posterior $ q_\phi(z|x)\approx p_\theta(z|x) $ where $ p_\theta(z|x) $ and the margianl likelihood
 
 $$
-q_\phi(z|x) \approx p(z|x)
+p_\theta(z|x)
+
+\frac{p_\theta(x|z)p(z)}
+{p_\theta(x)}
+
+\qquad
+
+p_\theta(x)
+
+\int p_\theta(x|z)p(z)dz
 $$
 
-The true posterior:
+are generally expensive to compute exactly. VAE therefore introduces variational inference and optimizes the Evidence Lower Bound (ELBO) from the original paper:
 
 $$
-p(z|x) = \frac{p(x|z)p(z)}{p(x)}
+\mathcal{L}(\theta,\phi;x^{(i)})
+= 
+- D_{KL}\left(q_\phi(z|x^{(i)})||p_\theta(z)\right)
++
+\frac{1}{L}\sum_{l=1}^{L}\log p_\theta\left(x^{(i)}|z^{(i,l)}\right)
+$$
+$$
+z^{(i,l)}
+
+g_\phi
+\left(
+\epsilon^{(i,l)},x^{(i)}
+\right),
+\qquad
+\epsilon^{(i,l)}
+\sim p(\epsilon)
 $$
 
-is usually intractable because computing the following is extrememly expensive:
+This formulation introduces the following reparameterization trick which allows gradients to propagate through stochastic latent sampling during backpropagation.
 
 $$
-p(x) = \int p(x|z)p(z)dz
+z
+=
+\mu
++
+\sigma\odot\epsilon,
+\qquad
+\epsilon\sim\mathcal{N}(0,I)
 $$
 
-VAE solves this through variational inference by optimizing the Evidence Lower Bound (ELBO):
 
-$$
-\log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x)\|p(z))
-$$
 
-This objective balances:
-- reconstruction quality
-- structured latent representations
 
-One of the paper's most important contributions is the reparameterization trick. Instead of directly sampling $ z \sim \mathcal{N}(\mu, \sigma^2) $, VAE rewrites the sampling process as:
-
-$$
-z = \mu + \sigma \odot \epsilon
-\quad
-\text{where}
-\quad
-\epsilon \sim \mathcal{N}(0, I)
-$$
-
-This allows gradients to flow through stochastic sampling during backpropagation.
 
 ### Core contribution
 
@@ -109,15 +117,25 @@ x_t;
 )
 $$
 
-After many timesteps $ x_T \sim \mathcal{N}(0, I) $. The model then learns the reverse process $ p_\theta(x_{t-1}|x_t) $ which progressively removes noise and reconstructs the data distribution.
+After many timesteps $ x_T \sim \mathcal{N}(0, I) $. The model then learns the reverse process $ p_\theta(x_{t-1}|x_t) $ which progressively removes noise and reconstructs the data distribution. Mathematically, DDPM remains closely connected to VAE: both introduce latent variables, define tractable Gaussian transitions, and optimize variational lower bounds instead of directly maximizing the intractable data likelihood. DDPM derives a variational objective over the entire diffusion trajectory:
 
-Instead of directly predicting images, DDPM predicts the noise added at each timestep:
+$$
+\mathcal{L}(\theta,\phi;x^{(i)})
+= 
+- D_{KL}\left(q_\phi(z|x^{(i)})||p_\theta(z)\right)
++
+\frac{1}{L}\sum_{l=1}^{L}\log p_\theta\left(x^{(i)}|z^{(i,l)}\right)
+$$
+
+which is later simplified into the practical denoising objective:
 
 $$
 L_{simple} = \mathbb{E}_{x_0,\epsilon,t} \left[\|\epsilon -\epsilon_\theta(x_t, t)\|^2\right]
 $$
 
-After DiT, the field is moving toward unified generative systems that combine multimodal understanding, scalable diffusion architectures, and interactive world modeling. Current directions include video generation, faster diffusion methods such as Flow Matching, and long-horizon reasoning for agents and simulation.
+Instead of directly predicting images, DDPM therefore learns to predict the Gaussian noise added at each timestep.
+
+
 
 To dive deeper, please refer to [my blog post about DDPM!](https://kmsrogerkim.github.io/ai/ddpm/)
 
@@ -203,36 +221,19 @@ $$
 \geq
 \mathbb{E}_{q(z|x)}[\log p(x|z)]
 
-D_{KL}(q(z|x)||p(z))
+- D_{KL}(q(z|x)||p(z))
 $$
 
-DDPM inherited this probabilistic viewpoint and derived a variational objective over the diffusion trajectory:
-
-$$
-L_{VLB}
-
-\mathbb{E}*q
-\left[
-\sum*{t=1}^{T}
-D_{KL}
-\left(
-q(x_{t-1}|x_t,x_0)
-||
-p_\theta(x_{t-1}|x_t)
-\right)
-\right]
-$$
-
-which was later simplified into the practical denoising objective:
+DDPM inherited this probabilistic viewpoint and derived a variational objective over the diffusion trajectory which was later simplified into the practical denoising objective:
 
 $$
 L_{simple}
-
+=
 \mathbb{E}_{x_0,\epsilon,t}
 \left[
 ||
 \epsilon
-
+-
 \epsilon_\theta(x_t,t)
 ||^2
 \right]
@@ -246,26 +247,16 @@ $$
 \epsilon_\theta(x_t,t)
 $$
 
-through random condition dropping:
+through random condition dropping. Sampling then combines conditional and unconditional predictions:
 
 $$
-p(c=\varnothing)=p_{drop}
+\hat{\epsilon}_\theta(z_t,c)
+
+= (1+w)\epsilon_\theta(z_\lambda,c)
+-
+w\epsilon_\theta(z_t)
 $$
 
-Sampling then combines conditional and unconditional predictions:
-
-$$
-\hat{\epsilon}_\theta
-
-\epsilon_\theta(x_t,t)
-+
-w
-(
-\epsilon_\theta(x_t,t,c)
-
-\epsilon_\theta(x_t,t)
-)
-$$
 
 where the residual term isolates the conditional signal introduced by the prompt. Earlier diffusion systems relied on external classifier gradients for guidance, but CFG removed this requirement entirely while dramatically improving prompt alignment. This simple modification became one of the most important practical advances in modern diffusion models.
 
