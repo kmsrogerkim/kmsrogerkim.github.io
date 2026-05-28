@@ -33,19 +33,12 @@ This blog post goes through the core ideas, mathematical formulations, and archi
 
 ## 1. Variational Autoencoder (VAE)
 
-A VAE learns an encoder that maps data into a latent distribution and a decoder that reconstructs samples from latent variables. Instead of learning a deterministic representation, VAE approximates the intractable posterior $ q_\phi(z|x)\approx p_\theta(z|x) $ where $ p_\theta(z|x) $ and the margianl likelihood
+A VAE learns an encoder that maps data into a latent distribution and a decoder that reconstructs samples from latent variables. Instead of learning a deterministic representation, VAE approximates the intractable posterior $q_\phi(z|x)\approx p_\theta(z|x)$ where $p_\theta(z|x)$ and the margianl likelihood
 
 $$
-p_\theta(z|x)
-
-\frac{p_\theta(x|z)p(z)}
-{p_\theta(x)}
-
+p_\theta(z|x)\frac{p_\theta(x|z)p(z)}{p_\theta(x)}
 \qquad
-
-p_\theta(x)
-
-\int p_\theta(x|z)p(z)dz
+p_\theta(x)\int p_\theta(x|z)p(z)dz
 $$
 
 are generally expensive to compute exactly. VAE therefore introduces variational inference and optimizes the Evidence Lower Bound (ELBO) from the original paper:
@@ -57,16 +50,13 @@ $$
 +
 \frac{1}{L}\sum_{l=1}^{L}\log p_\theta\left(x^{(i)}|z^{(i,l)}\right)
 $$
+
 $$
 z^{(i,l)}
 
-g_\phi
-\left(
-\epsilon^{(i,l)},x^{(i)}
-\right),
+g_\phi\left(\epsilon^{(i,l)},x^{(i)}\right),
 \qquad
-\epsilon^{(i,l)}
-\sim p(\epsilon)
+\epsilon^{(i,l)}\sim p(\epsilon)
 $$
 
 This formulation introduces the following reparameterization trick which allows gradients to propagate through stochastic latent sampling during backpropagation.
@@ -80,10 +70,6 @@ z
 \qquad
 \epsilon\sim\mathcal{N}(0,I)
 $$
-
-
-
-
 
 ### Core contribution
 
@@ -102,7 +88,7 @@ It established the idea that generation can happen inside a structured latent sp
 ## 2. Denoising Diffusion Probabilistic Models (DDPM)
 
 <p align="center">
-  <img src="/assets/img/ddpm.png" width="90%">
+  <img src="/assets/img/ddpm.png" width="100%">
 </p>
 
 DDPM formulates image generation as iterative denoising. The forward process gradually corrupts data with Gaussian noise:
@@ -117,7 +103,7 @@ x_t;
 )
 $$
 
-After many timesteps $ x_T \sim \mathcal{N}(0, I) $. The model then learns the reverse process $ p_\theta(x_{t-1}|x_t) $ which progressively removes noise and reconstructs the data distribution. Mathematically, DDPM remains closely connected to VAE: both introduce latent variables, define tractable Gaussian transitions, and optimize variational lower bounds instead of directly maximizing the intractable data likelihood. DDPM derives a variational objective over the entire diffusion trajectory:
+After many timesteps $ x_T \sim \mathcal{N}(0, I) $. The model then learns the reverse process which progressively removes noise and reconstructs the data distribution. Mathematically, DDPM remains closely connected to VAE: both introduce latent variables, define tractable Gaussian transitions, and optimize variational lower bounds instead of directly maximizing the intractable data likelihood. DDPM derives a variational objective over the entire diffusion trajectory:
 
 $$
 \mathcal{L}(\theta,\phi;x^{(i)})
@@ -264,7 +250,7 @@ where the residual term isolates the conditional signal introduced by the prompt
 ## 6. Masked Autoencoder (MAE)
 
 <p align="center">
-  <img src="/assets/img/vit/mae.png" width="100%">
+  <img src="/assets/img/mae.png" width="100%">
 </p>
 
 MAE performs self-supervised learning by masking a large portion of image patches and reconstructing the missing content from only the visible patches. Unlike earlier reconstruction-based methods, the encoder processes only unmasked tokens while reconstruction is delegated to a lightweight decoder, making training substantially more efficient despite very high masking ratios. This showed that transformer-based vision models could learn strong semantic representations directly from unlabeled data and significantly strengthened the ViT ecosystem. More broadly, MAE helped establish transformers as scalable visual backbones, indirectly accelerating later transformer-based generative systems such as DiT.
