@@ -6,9 +6,7 @@ tag: [AI, CV]
 use_math: true
 ---
 
-## 8 Essential Computer Vision Papers I Read as a CS Undergrad: From VAE to DiT
-
-Here are 8 essential computer vision papers I read, in order.
+Here are 8 essential computer vision papers I read that forms the foundation of modern computer vision / generative models; in chronological order.
 
 1. [Variational Autoencoder (VAE) (2013)](https://arxiv.org/abs/1312.6114)
 2. [Denoising Diffusion Probabilistic Models (DDPM) (2020)](https://arxiv.org/abs/2006.11239)
@@ -18,9 +16,6 @@ Here are 8 essential computer vision papers I read, in order.
 6. [Masked Autoencoder (MAE) (2021)](https://arxiv.org/abs/2111.06377)
 7. [Latent Diffusion Models (LDM) (2022)](https://arxiv.org/abs/2112.10752)
 8. [Diffusion Transformer (DiT) (2022)](https://arxiv.org/abs/2212.09748)
-
-
-## Introduction
 
 Modern computer vision and generative modeling evolved through a sequence of connected breakthroughs. In 2013, the Variational Autoencoder (VAE) introduced probabilistic latent-variable modeling and the Evidence Lower Bound (ELBO), providing a practical framework for learning continuous latent representations. Instead of mapping an image into a fixed deterministic vector, VAE modeled the latent space as a distribution, which later became important for scalable generative models and latent-space compression.
 
@@ -54,13 +49,11 @@ $$
 p(z|x) = \frac{p(x|z)p(z)}{p(x)}
 $$
 
-is usually intractable because computing:
+is usually intractable because computing the following is extrememly expensive:
 
 $$
 p(x) = \int p(x|z)p(z)dz
 $$
-
-is expensive.
 
 VAE solves this through variational inference by optimizing the Evidence Lower Bound (ELBO):
 
@@ -72,13 +65,7 @@ This objective balances:
 - reconstruction quality
 - structured latent representations
 
-One of the paper's most important contributions is the reparameterization trick. Instead of directly sampling:
-
-$$
-z \sim \mathcal{N}(\mu, \sigma^2)
-$$
-
-VAE rewrites the sampling process as:
+One of the paper's most important contributions is the reparameterization trick. Instead of directly sampling $ z \sim \mathcal{N}(\mu, \sigma^2) $, VAE rewrites the sampling process as:
 
 $$
 z = \mu + \sigma \odot \epsilon
@@ -102,7 +89,7 @@ It established the idea that generation can happen inside a structured latent sp
 1. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (1)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-1.html?m=1)
 2. [초짜 대학원생의 입장에서 이해하는 Auto-Encoding Variational Bayes (VAE) (2)](https://jaejunyoo.blogspot.com/2017/04/auto-encoding-variational-bayes-vae-2.html?m=1)
 
-*_They are written in Korean... not just because I'm Korean, but because this is the best blog post I could find discussing VAE in such depth and detail._*
+*_They are written in Korean... but this is the best blog post I could find discussing VAE in such depth and detail._*
 
 ## 2. Denoising Diffusion Probabilistic Models (DDPM)
 DDPM formulates image generation as iterative denoising. The forward process gradually corrupts data with Gaussian noise:
@@ -132,19 +119,14 @@ $$
 which progressively removes noise and reconstructs the data distribution.
 
 
-![](/assets/img/ddpm.png)
+<p align="center">
+  <img src="/assets/img/ddpm.png" width="90%">
+</p>
 
 Instead of directly predicting images, DDPM predicts the noise added at each timestep:
 
 $$
-L_{simple} =
-\mathbb{E}_{x_0,\epsilon,t}
-\left[
-\|
-\epsilon -
-\epsilon_\theta(x_t, t)
-\|^2
-\right]
+L_{simple} = \mathbb{E}_{x_0,\epsilon,t} \left[\|\epsilon -\epsilon_\theta(x_t, t)\|^2\right]
 $$
 
 To dive deeper, please refer to [my blog post about DDPM!](https://kmsrogerkim.github.io/ai/ddpm/)
@@ -161,61 +143,30 @@ Before diffusion models, GANs dominated image generation but suffered from:
 - mode collapse
 - limited sample diversity
 
-DDPM replaced adversarial training with a denoising objective and achieved significantly more stable optimization and higher sample quality. This paper completely changed the direction of generative modeling.
-
-### Why it mattered later
-
-DDPM established the diffusion framework later reused by:
+DDPM replaced adversarial training with a denoising objective and achieved significantly more stable optimization and higher sample quality. Basically, they established the diffusion framework, which is now the standard for generative models. This paper led to:
 - CFG for controllable generation
 - LDM for latent-space diffusion
 - DiT for transformer-based diffusion backbones
 
-LDM is fundamentally a latent diffusion model; and DiT is fundamentally a transformer-based diffusion model. Without DDPM, neither paper would have been possible.
-
 ## 3. Vision Transformer (ViT)
 
-Before ViT, CNNs dominated computer vision because images were assumed to require convolutional inductive biases such as locality and translation equivariance.
-
-ViT challenged this assumption by treating images as token sequences.
+Before ViT, CNNs dominated computer vision because images were assumed to require convolutional inductive biases such as locality and translation equivariance. ViT challenged this assumption by treating images as token sequences.
 
 <p align="center">
   <img src="/assets/img/vit/vit_architecture.png" width="100%">
 </p>
 
-Given an image:
-
-$$
-x \in \mathbb{R}^{H \times W \times C}
-$$
-
-ViT splits the image into fixed-size patches:
+Given an image $ x \in \mathbb{R}^{H \times W \times C} $, ViT splits the image into fixed-size patches:
 
 ```text
 image -> patches -> tokens -> transformer
 ```
 
-Each flattened patch is projected into a token embedding:
-
-$$
-z_0 =
-[x_p^1E;
-x_p^2E;
-...;
-x_p^NE]
-$$
-
-The transformer encoder then processes these patch tokens similarly to words in NLP.
+Each flattened patch is projected into a token embedding $ z_0 = [x_p^1E; x_p^2E; ...; x_p^NE] $. The transformer encoder then processes these patch tokens similarly to words in NLP.
 
 ### Core contribution
 
-ViT introduced:
-- transformer architectures for vision
-- patch-based tokenization for images
-- large-scale transformer scaling in computer vision
-
 The key result was that transformer scaling laws also apply to vision when trained on sufficiently large datasets. This paper fundamentally changed vision architectures.
-
-### Why it mattered later
 
 ViT became the architectural foundation for:
 - MAE self-supervised learning
@@ -226,32 +177,37 @@ Transformers later became central not only for representation learning, but also
 
 ## 4. CLIP
 
-CLIP learns aligned image and text representations through contrastive learning.
+<p align="center">
+  <img src="/assets/img/vit/clip_architecture.png" width="100%">
+</p>
 
-Instead of predicting fixed class labels, CLIP learns shared embeddings between images and text
-
-![](/assets/img/clip_architecture.png)
-
-Given image encoder $f(x)$ and text encoder $g(t)$:
+CLIP learns aligned image and text representations through contrastive learning. Instead of predicting fixed class labels, CLIP learns aligned image-text embeddings with a contrastive loss:
 
 $$
-\text{similarity}(x,t)
+L_{\text{CLIP}}
 =
-f(x)^T g(t)
+-\frac1N
+\sum_i
+\log
+\frac{
+\exp(\text{sim}(f(x_i),g(t_i))/\tau)
+}{
+\sum_j
+\exp(\text{sim}(f(x_i),g(t_j))/\tau)
+}
 $$
 
-The model maximizes similarity for matching image-text pairs while minimizing similarity for mismatched pairs.
+Instead of class labels $y\in\{1,\ldots,K\}$, CLIP produces a semantic conditioning vector
+
+$$
+c=g(\text{prompt})
+$$
+
+which later becomes the text condition used in diffusion.
 
 ### Core contribution
 
-CLIP introduced:
-- large-scale image-text contrastive learning
-- multimodal representation learning
-- natural language supervision for vision systems
-
 The important shift was replacing fixed-label supervision with natural language supervision at internet scale.
-
-### Why it mattered later
 
 CLIP enabled:
 - text-conditioned image generation
@@ -283,13 +239,7 @@ $$
 \log p(x)
 $$
 
-which is often intractable, VAE optimized a lower bound of the data likelihood.
-
-This became one of the most important ideas in deep generative modeling.
-
-Later diffusion models inherited this probabilistic viewpoint.
-
-DDPM also derives from a variational objective and optimizes a form of ELBO over the entire diffusion trajectory:
+which is often intractable, VAE optimized a lower bound of the data likelihood. This became one of the most important ideas in deep generative modeling. Later diffusion models inherited this probabilistic viewpoint.DDPM also derives from a variational objective and optimizes a form of ELBO over the entire diffusion trajectory:
 
 $$
 L_{VLB}
@@ -441,51 +391,13 @@ CFG solved this problem with a surprisingly simple modification to sampling.
 
 This paper became one of the most important practical improvements in diffusion models.
 
----
-
-### Why it mattered later
-
-Stable Diffusion heavily relies on CFG for prompt-following behavior.
-
-Without CFG, text-to-image systems would:
-
-* follow prompts less accurately
-* generate weaker semantic alignment
-* produce less controllable outputs
-
-CFG also became deeply connected with CLIP-conditioned diffusion systems.
-
-CLIP provided semantic text embeddings:
-
-$$
-c = f_{text}(prompt)
-$$
-
-while CFG strengthened how strongly diffusion models followed those embeddings during generation.
-
-LDM later combined:
-
-* VAE latent compression
-* DDPM denoising
-* CLIP conditioning
-* CFG guidance
-
-into a single practical text-to-image pipeline.
-
-In many ways, CFG was one of the final missing pieces that transformed diffusion models from impressive research results into controllable generative systems usable by the public.
-
-
 ## 6. Masked Autoencoder (MAE)
 
-### Core idea
+MAE performs self-supervised learning through masked image reconstruction. Large portions of image patches, often around 75%, are removed.
 
-MAE performs self-supervised learning through masked image reconstruction.
-
-Large portions of image patches, often around 75%, are removed:
-
-```text
-input image -> remove patches -> reconstruct missing patches
-```
+<p align="center">
+  <img src="/assets/img/vit/mae.png" width="100%">
+</p>
 
 Unlike earlier reconstruction methods, MAE uses:
 - a heavy encoder for visible patches
@@ -500,45 +412,69 @@ MAE introduced:
 - high-ratio masked reconstruction for images
 - efficient transformer pretraining for vision
 
-The paper demonstrated that transformer-based vision models can learn strong image representations from unlabeled data alone.
-
-### Why it mattered later
-
-MAE strengthened the ViT ecosystem and accelerated transformer adoption in vision.
-
-This indirectly helped transformer-based generative systems like DiT become practical and scalable.
+The paper demonstrated that transformer-based vision models can learn strong image representations from unlabeled data alone. MAE strengthened the ViT ecosystem and accelerated transformer adoption in vision. This indirectly helped transformer-based generative systems like DiT become practical and scalable.
 
 ## 7. Latent Diffusion Models (LDM)
 
-### Core idea
+<p align="center">
+  <img src="/assets/img/LDM.png" width="100%">
+</p>
 
-Pixel-space diffusion is computationally expensive because diffusion operates over very high-dimensional tensors.
-
-LDM addresses this by first compressing images into latent representations:
-
-$$
-z = \mathcal{E}(x)
-$$
-
-Diffusion is then performed inside latent space:
+LDM compresses images with an autoencoder:
 
 $$
-z_t \rightarrow z_{t-1}
+z=\mathcal{E}(x)
 $$
 
-Finally, the decoder reconstructs the image:
+and diffuses in latent space rather than pixel space. The diffusion loss remains structurally the same as DDPM:
 
 $$
-x = \mathcal{D}(z)
+L_{\text{LDM}}
+=
+\mathbb{E}
+\left[
+\|\epsilon-\epsilon_\theta(z_t,t,c)\|^2
+\right]
 $$
 
-Conceptually:
+compared with
 
-```text
-image -> latent space -> diffusion -> decoder
-```
+$$
+L_{\text{DDPM}}
+=
+\mathbb{E}
+\left[
+\|\epsilon-\epsilon_\theta(x_t,t)\|^2
+\right]
+$$
 
-This dramatically reduces computational cost while preserving image quality.
+The main change is
+
+$$
+x_t\rightarrow z_t
+$$
+
+so the model works in a lower-dimensional manifold. Conditioning enters through text embeddings
+
+$$
+c=f_{\text{text}}(\text{prompt})
+$$
+
+and CFG strengthens sampling:
+
+$$
+\hat\epsilon_\theta
+=
+\epsilon_\theta(z_t,t)
++
+w\Big(\epsilon_\theta(z_t,t,c)-\epsilon_\theta(z_t,t)\Big)
+$$
+
+LDM is therefore a composition of
+
+$$
+\text{VAE}+\text{DDPM}+\text{CLIP}+\text{CFG}
+$$
 
 ### Core contribution
 
@@ -563,25 +499,42 @@ It demonstrated that high-quality text-to-image generation could become practica
 
 ## 8. Diffusion Transformer (DiT)
 
-### Core idea
+<p align="center">
+  <img src="/assets/img/dit_architecture.png" width="100%">
+</p>
 
-Earlier diffusion systems mainly used convolutional U-Nets as denoising backbones.
+Earlier diffusion systems mainly used convolutional U-Nets as denoising backbones. DiT replaced this architecture with transformers operating directly on latent patches. DiT replaces the U-Net denoiser with a transformer over latent patches:
 
-DiT replaced this architecture with transformers operating directly on latent patches.
+$$
+z\rightarrow\{z_p^1,\ldots,z_p^N\}
+$$
 
-Instead of:
+with the same attention rule used in ViT:
 
-```text
-diffusion + CNN/U-Net
-```
+$$
+\text{Attention}(Q,K,V)
+=
+\text{softmax}\!\left(\frac{QK^T}{\sqrt d}\right)V
+$$
 
-DiT uses:
+The diffusion loss is unchanged in form:
 
-```text
-diffusion + transformer
-```
+$$
+L_{\text{DiT}}
+=
+\mathbb{E}
+\left[
+\|\epsilon-\epsilon_\theta(z_t,t,c)\|^2
+\right]
+$$
 
-The transformer processes latent patch tokens similarly to ViT.
+The architectural change is
+
+$$
+\text{U-Net}\rightarrow\text{Transformer}
+$$
+
+so DiT keeps the diffusion objective while swapping in a transformer backbone.
 
 ### Core contribution
 
@@ -655,14 +608,10 @@ This matters for:
 
 ## Final Thoughts
 
-One thing I found interesting is that modern computer vision did not progress from a single breakthrough. It evolved by combining ideas such as:
-- latent spaces from VAE
-- denoising from DDPM
-- transformers from ViT
-- multimodal learning from CLIP
-- controllable generation from CFG
+What makes these papers particularly important is not only their individual contributions, but also how naturally they compose into a unified generative framework. VAE introduced latent-variable inference and variational optimization. DDPM reformulated generation as iterative denoising through probabilistic diffusion. ViT and MAE established transformers as scalable visual architectures, while CLIP transformed natural language into a usable conditioning interface. CFG then made diffusion models practically controllable, and LDM combined these ideas into an efficient latent-space generative system. Finally, DiT demonstrated that transformer scaling behavior extends directly into diffusion-based image generation itself.
 
-LDM and DiT are products of this convergence. That is the biggest lesson from reading these papers.
+Viewed historically, modern generative AI did not emerge from a single breakthrough, but from the gradual convergence of probabilistic modeling, diffusion processes, representation learning, multimodal conditioning, and transformer scaling. Many modern systems still inherit the same mathematical structure introduced across these papers: variational objectives, denoising losses, latent representations, attention mechanisms, and conditional guidance. Understanding how these ideas connect provides a much clearer picture of why current generative models work, how they evolved, and where future architectures may continue to develop.
+
 
 ## References  
 
