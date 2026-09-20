@@ -8,10 +8,10 @@ sidebar_main: true
 # Minseung (Roger) Kim 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/kmsrogerkim) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kmsrogerkim/)  
 
-Welcome! I am Roger Kim, a computer science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng), Seoul. With expertise in Python and experience in C, C++, Java and JS, I Have built several REST APIs using **Django REST Framework (DRF)**. 
+Great to meet you! I am a Computer Science student at [Hanyang University](https://www.hanyang.ac.kr/web/eng) with experience in backend development, cloud deployment, and machine learning. Proficient in Python with hands-on experience using Docker, AWS, and GitHub Actions. Conducted 10 months of research involving CNNs and DSP for audio data, and contributed to startup projects in collaborative, agile environments.
 
-I am familiar with essential deploying tools such as Docker, AWS, GitHub Actions and so on.
-Furthermore, I am experienced in team working and is experienced with agile culture that I have learnt while being part of a startup project.
+I am a curious and analytical problem-solver who enjoys understanding systems from first principles and applying ideas across domains. I learn independently, adapt quickly to unfamiliar technologies, and enjoy turning technical concepts into practical solutions.
+
 
 ## Experience
 ### Research Intern (Oct 2024 - July 2025)
@@ -21,7 +21,6 @@ Furthermore, I am experienced in team working and is experienced with agile cult
 ## Key Skills
 ### Software Engineering
 - Backend development with ***Django***
-- REST API development with ***Django Rest Framework (DRF)***
 - Containerization with ***Docker***
 - Deploying with ***AWS*** (ECS, EC2, RDS, Lambda, and more.)
 
@@ -56,7 +55,9 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
   <img src="/assets/img/about/clip_landing.png" width="100%" />
 </p>
 
-[Clip](https://www.clipclub.co.kr/) provides customizable tools that allow any university club to build its own system based on its unique way of operating. By doing so, it automates repetitive administrative tasks, enhances collaboration efficiency, and improves the participation experience for all members.
+> GitHub: [https://github.com/youngbin03/clip-landing](https://github.com/youngbin03/clip-landing)
+
+[Clip](https://clip-web.vercel.app/) provides customizable tools that allow any university club to build its own system based on its unique way of operating. By doing so, it automates repetitive administrative tasks, enhances collaboration efficiency, and improves the participation experience for all members.
 
 ### Contributions
 - Managed domains with **Route53**, configuring subdomains
@@ -106,6 +107,8 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
   <img src="/assets/img/about/cmpnyinfo_porfolio_unified.png" width="100%" />
 </p>
 
+> GitHub: [https://github.com/kmsrogerkim/DJANGO-cmpnyinfo](https://github.com/kmsrogerkim/DJANGO-cmpnyinfo)
+
 This is a simple website that analyses the financial statements of corporations registered in Korean Composite Stock Price Indexes(KOSPI). It provides ***essential analytical data*** and ***visual representation*** using variouse types of graphs.
 
 **Tech Stack**
@@ -120,7 +123,8 @@ This is a simple website that analyses the financial statements of corporations 
   <img src="/assets/img/naver2.png" width="95%" />
 </p>
 
-Visit it [here](https://github.com/kmsrogerkim/NAVER-Shopping-Insight). 
+> GitHub: [https://github.com/kmsrogerkim/NAVER-Shopping-Insight](https://github.com/kmsrogerkim/NAVER-Shopping-Insight)
+
 This is an API-based application that gathers information such as, 
 1. the most searched keywords for shopping categories, from one of South Korea's biggest IT company, NAVER.
 2. other such as monthly searched numbers, product numbers, competition index, etc.
@@ -136,7 +140,7 @@ This is an API-based application that gathers information such as,
   <img src="/assets/img/corporate_analysis2.png" width="95%" />
 </p>
 
-Visit it [here](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis).
+>  GitHub: [https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis](https://github.com/kmsrogerkim/PYTHON-Corporate-Data-Analysis)
 
 This opensource, API-based project:
 1. gathers & organizes the financial statements of companies listed in KOSPI(Korean Composite Stock Price Index); over the period of past six years.
