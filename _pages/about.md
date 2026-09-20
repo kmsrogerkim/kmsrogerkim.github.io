@@ -54,7 +54,7 @@ I worked on the [Development of Respiratory Disease Diagnosis Model Based on Cou
   <img src="/assets/img/about/clip_landing.png" width="100%" />
 </p>
 
-![](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white) ![](https://img.shields.io/badge/Web-blue?logo=firefoxbrowser)
+[![](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/youngbin03/clip-landing) [![](https://img.shields.io/badge/Web-blue?logo=firefoxbrowser)](https://clip-web.vercel.app)
 
 [Clip](https://clip-web.vercel.app/) provides customizable tools that allow any university club to build its own system based on its unique way of operating. By doing so, it automates repetitive administrative tasks, enhances collaboration efficiency, and improves the participation experience for all members.
 
