@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Roger Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Welcome to my blog! I record my journey to becoming a developer here!"
+  bio              : "Welcome to my blog!"
   location         : "Seoul, Republic of Korea"
   email            : 
   links:
