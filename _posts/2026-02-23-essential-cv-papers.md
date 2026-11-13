@@ -47,6 +47,7 @@ $$
 p_\theta(z|x) = \frac{p_\theta(x|z)p(z)}{p_\theta(x)}
 \qquad
 $$ 
+
 $$ 
 p_\theta(x) = \int p_\theta(x|z)p(z)dz
 $$
@@ -55,9 +56,11 @@ VAE therefore introduces variational inference and optimizes the Evidence Lower 
 
 
 $\quad \mathcal{L}(\theta,\phi;x^{(i)}) =$
+
 $$
 - D_{KL}\left(q_\phi(z|x^{(i)})||p_\theta(z)\right)
 $$
+
 $$
 + \frac{1}{L}\sum_{l=1}^{L}\log p_\theta\left(x^{(i)}|z^{(i,l)}\right)
 $$
@@ -277,6 +280,7 @@ L_{\text{DDPM}}=\mathbb{E}\left[\|\epsilon-\epsilon_\theta(x_t,t)\|^2\right]
 
 \qquad
 $$ 
+
 $$ 
 L_{\text{LDM}}=\mathbb{E}\left[\|\epsilon-\epsilon_\theta(z_t,t,c)\|^2\right]
 $$
