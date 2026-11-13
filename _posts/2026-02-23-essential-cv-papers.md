@@ -277,8 +277,6 @@ The denoising objectives for pixel-space DDPM and latent-space diffusion have th
 
 $$
 L_{\text{DDPM}}=\mathbb{E}\left[\|\epsilon-\epsilon_\theta(x_t,t)\|^2\right]
-
-\qquad
 $$ 
 
 $$ 
